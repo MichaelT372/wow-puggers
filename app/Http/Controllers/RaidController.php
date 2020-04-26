@@ -69,7 +69,7 @@ class RaidController extends Controller
     public function show(Raid $raid)
     {
         $raid->load(['raiders' => function ($query) {
-            $query->select(['character_name', 'class', 'spec', 'soft_reserve', 'douse', 'confirmed', 'raid_id']);
+            $query->select(['id', 'character_name', 'class', 'spec', 'soft_reserve', 'douse', 'confirmed', 'raid_id']);
         }]);
 
         return view('raids.show', compact('raid'));

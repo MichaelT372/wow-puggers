@@ -12,22 +12,22 @@
           <form ref="form">
             <div class="form-group">
               <label for="character-name">Name: *</label>
-              <input v-model="signup.character_name" class="form-control" type="text" id="character-name">
+              <input v-model="signup.character_name" class="form-control" type="text" id="character-name" required>
             </div>
             <div class="form-group">
-              <label for="class">Class:</label>
+              <label for="class">Class: *</label>
               <select v-model="signup.class" class="form-control" id="class" required>
                 <option v-for="name in classNames" :value="name">{{ name }}</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="spec">Specialisation:</label>
+              <label for="spec">Specialisation: *</label>
               <select v-model="signup.spec" class="form-control" id="spec" required>
                 <option v-for="spec in classSpecs" :value="spec">{{ spec }}</option>
               </select>
             </div>
             <div class="form-group" v-if="softReserves">
-              <label for="spec">Soft reserve:</label>
+              <label for="spec">Soft reserve: *</label>
               <select v-model="signup.soft_reserve" class="form-control" id="soft-reserve" required>
                 <option v-for="item in softReserveItems" :value="item">{{ item }}</option>
               </select>
@@ -77,6 +77,10 @@
       softReserves: {
         required: true,
         type: Boolean
+      },
+      faction: {
+        required: true,
+        type: String
       }
     },
 
@@ -94,7 +98,8 @@
 
     computed: {
       classNames() {
-        return this.classes.map(c => c.class);
+        return this.classes.map(c => c.class)
+                .filter(n => this.faction === 'Horde' ? n !== 'Paladin' : n !== 'Shaman');
       },
       classSpecs() {
         const selectedClass = this.classes.find(c => c.class === this.signup.class);

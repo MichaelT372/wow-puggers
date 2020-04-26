@@ -1,5 +1,8 @@
 // Body
-$body-bg: #f8fafc;
+$body-bg: #1c1c1c;
+$body-color: #ffffff;
+
+$modal-content-color: #212529;
 
 // Typography
 $font-family-sans-serif: 'Nunito', sans-serif;
@@ -17,3 +20,25 @@ $yellow: #ffed4a;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
+
+$druid: #FF7D0A;
+$hunter: #A9D271;
+$mage: #40C7EB;
+$paladin: #F58CBA;
+$shaman: #F58CBA;
+$priest: #FFFFFF;
+$rogue: #FFF569;
+$warlock: #8787ED;
+$warrior: #C79C6E;
+
+$theme-colors: (
+  "druid": $druid,
+  "hunter": $hunter,
+  "mage": $mage,
+  "paladin": $paladin,
+  "shaman": $shaman,
+  "priest": $priest,
+  "rogue": $rogue,
+  "warlock": $warlock,
+  "warrior": $warrior
+);

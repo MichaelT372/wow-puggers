@@ -29,6 +29,15 @@
   --danger: #e3342f;
   --light: #f8f9fa;
   --dark: #343a40;
+  --druid: #FF7D0A;
+  --hunter: #A9D271;
+  --mage: #40C7EB;
+  --paladin: #F58CBA;
+  --shaman: #F58CBA;
+  --priest: #FFFFFF;
+  --rogue: #FFF569;
+  --warlock: #8787ED;
+  --warrior: #C79C6E;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -70,9 +79,9 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.6;
-  color: #212529;
+  color: #ffffff;
   text-align: left;
-  background-color: #f8fafc;
+  background-color: #1c1c1c;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -512,7 +521,7 @@ mark,
 
 .img-thumbnail {
   padding: 0.25rem;
-  background-color: #f8fafc;
+  background-color: #1c1c1c;
   border: 1px solid #dee2e6;
   border-radius: 0.25rem;
   max-width: 100%;
@@ -1803,7 +1812,7 @@ pre code {
 .table {
   width: 100%;
   margin-bottom: 1rem;
-  color: #212529;
+  color: #ffffff;
 }
 
 .table th,
@@ -1853,7 +1862,7 @@ pre code {
 }
 
 .table-hover tbody tr:hover {
-  color: #212529;
+  color: #ffffff;
   background-color: rgba(0, 0, 0, 0.075);
 }
 
@@ -2031,6 +2040,204 @@ pre code {
 .table-hover .table-dark:hover > td,
 .table-hover .table-dark:hover > th {
   background-color: #b9bbbe;
+}
+
+.table-druid,
+.table-druid > th,
+.table-druid > td {
+  background-color: #ffdbba;
+}
+
+.table-druid th,
+.table-druid td,
+.table-druid thead th,
+.table-druid tbody + tbody {
+  border-color: #ffbb80;
+}
+
+.table-hover .table-druid:hover {
+  background-color: #ffcea1;
+}
+
+.table-hover .table-druid:hover > td,
+.table-hover .table-druid:hover > th {
+  background-color: #ffcea1;
+}
+
+.table-hunter,
+.table-hunter > th,
+.table-hunter > td {
+  background-color: #e7f2d7;
+}
+
+.table-hunter th,
+.table-hunter td,
+.table-hunter thead th,
+.table-hunter tbody + tbody {
+  border-color: #d2e8b5;
+}
+
+.table-hover .table-hunter:hover {
+  background-color: #dbecc4;
+}
+
+.table-hover .table-hunter:hover > td,
+.table-hover .table-hunter:hover > th {
+  background-color: #dbecc4;
+}
+
+.table-mage,
+.table-mage > th,
+.table-mage > td {
+  background-color: #caeff9;
+}
+
+.table-mage th,
+.table-mage td,
+.table-mage thead th,
+.table-mage tbody + tbody {
+  border-color: #9ce2f5;
+}
+
+.table-hover .table-mage:hover {
+  background-color: #b3e8f6;
+}
+
+.table-hover .table-mage:hover > td,
+.table-hover .table-mage:hover > th {
+  background-color: #b3e8f6;
+}
+
+.table-paladin,
+.table-paladin > th,
+.table-paladin > td {
+  background-color: #fcdfec;
+}
+
+.table-paladin th,
+.table-paladin td,
+.table-paladin thead th,
+.table-paladin tbody + tbody {
+  border-color: #fac3db;
+}
+
+.table-hover .table-paladin:hover {
+  background-color: #fac8de;
+}
+
+.table-hover .table-paladin:hover > td,
+.table-hover .table-paladin:hover > th {
+  background-color: #fac8de;
+}
+
+.table-shaman,
+.table-shaman > th,
+.table-shaman > td {
+  background-color: #fcdfec;
+}
+
+.table-shaman th,
+.table-shaman td,
+.table-shaman thead th,
+.table-shaman tbody + tbody {
+  border-color: #fac3db;
+}
+
+.table-hover .table-shaman:hover {
+  background-color: #fac8de;
+}
+
+.table-hover .table-shaman:hover > td,
+.table-hover .table-shaman:hover > th {
+  background-color: #fac8de;
+}
+
+.table-priest,
+.table-priest > th,
+.table-priest > td {
+  background-color: white;
+}
+
+.table-priest th,
+.table-priest td,
+.table-priest thead th,
+.table-priest tbody + tbody {
+  border-color: white;
+}
+
+.table-hover .table-priest:hover {
+  background-color: #f2f2f2;
+}
+
+.table-hover .table-priest:hover > td,
+.table-hover .table-priest:hover > th {
+  background-color: #f2f2f2;
+}
+
+.table-rogue,
+.table-rogue > th,
+.table-rogue > td {
+  background-color: #fffcd5;
+}
+
+.table-rogue th,
+.table-rogue td,
+.table-rogue thead th,
+.table-rogue tbody + tbody {
+  border-color: #fffab1;
+}
+
+.table-hover .table-rogue:hover {
+  background-color: #fffabc;
+}
+
+.table-hover .table-rogue:hover > td,
+.table-hover .table-rogue:hover > th {
+  background-color: #fffabc;
+}
+
+.table-warlock,
+.table-warlock > th,
+.table-warlock > td {
+  background-color: #ddddfa;
+}
+
+.table-warlock th,
+.table-warlock td,
+.table-warlock thead th,
+.table-warlock tbody + tbody {
+  border-color: #c1c1f6;
+}
+
+.table-hover .table-warlock:hover {
+  background-color: #c7c7f7;
+}
+
+.table-hover .table-warlock:hover > td,
+.table-hover .table-warlock:hover > th {
+  background-color: #c7c7f7;
+}
+
+.table-warrior,
+.table-warrior > th,
+.table-warrior > td {
+  background-color: #efe3d6;
+}
+
+.table-warrior th,
+.table-warrior td,
+.table-warrior thead th,
+.table-warrior tbody + tbody {
+  border-color: #e2ccb4;
+}
+
+.table-hover .table-warrior:hover {
+  background-color: #e8d6c4;
+}
+
+.table-hover .table-warrior:hover > td,
+.table-hover .table-warrior:hover > th {
+  background-color: #e8d6c4;
 }
 
 .table-active,
@@ -2258,7 +2465,7 @@ select.form-control:focus::-ms-value {
   margin-bottom: 0;
   font-size: 1rem;
   line-height: 1.6;
-  color: #212529;
+  color: #ffffff;
   background-color: transparent;
   border: solid transparent;
   border-width: 1px 0;
@@ -2650,7 +2857,7 @@ textarea.form-control.is-invalid {
 .btn {
   display: inline-block;
   font-weight: 400;
-  color: #212529;
+  color: #ffffff;
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
@@ -2674,7 +2881,7 @@ textarea.form-control.is-invalid {
 }
 
 .btn:hover {
-  color: #212529;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -3022,6 +3229,375 @@ fieldset:disabled a.btn {
   box-shadow: 0 0 0 0.2rem rgba(82, 88, 93, 0.5);
 }
 
+.btn-druid {
+  color: #212529;
+  background-color: #FF7D0A;
+  border-color: #FF7D0A;
+}
+
+.btn-druid:hover {
+  color: #fff;
+  background-color: #e36a00;
+  border-color: #d66400;
+}
+
+.btn-druid:focus,
+.btn-druid.focus {
+  color: #fff;
+  background-color: #e36a00;
+  border-color: #d66400;
+  box-shadow: 0 0 0 0.2rem rgba(222, 112, 15, 0.5);
+}
+
+.btn-druid.disabled,
+.btn-druid:disabled {
+  color: #212529;
+  background-color: #FF7D0A;
+  border-color: #FF7D0A;
+}
+
+.btn-druid:not(:disabled):not(.disabled):active,
+.btn-druid:not(:disabled):not(.disabled).active,
+.show > .btn-druid.dropdown-toggle {
+  color: #fff;
+  background-color: #d66400;
+  border-color: #c95e00;
+}
+
+.btn-druid:not(:disabled):not(.disabled):active:focus,
+.btn-druid:not(:disabled):not(.disabled).active:focus,
+.show > .btn-druid.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(222, 112, 15, 0.5);
+}
+
+.btn-hunter {
+  color: #212529;
+  background-color: #A9D271;
+  border-color: #A9D271;
+}
+
+.btn-hunter:hover {
+  color: #212529;
+  background-color: #97c954;
+  border-color: #92c64a;
+}
+
+.btn-hunter:focus,
+.btn-hunter.focus {
+  color: #212529;
+  background-color: #97c954;
+  border-color: #92c64a;
+  box-shadow: 0 0 0 0.2rem rgba(149, 184, 102, 0.5);
+}
+
+.btn-hunter.disabled,
+.btn-hunter:disabled {
+  color: #212529;
+  background-color: #A9D271;
+  border-color: #A9D271;
+}
+
+.btn-hunter:not(:disabled):not(.disabled):active,
+.btn-hunter:not(:disabled):not(.disabled).active,
+.show > .btn-hunter.dropdown-toggle {
+  color: #212529;
+  background-color: #92c64a;
+  border-color: #8cc341;
+}
+
+.btn-hunter:not(:disabled):not(.disabled):active:focus,
+.btn-hunter:not(:disabled):not(.disabled).active:focus,
+.show > .btn-hunter.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(149, 184, 102, 0.5);
+}
+
+.btn-mage {
+  color: #212529;
+  background-color: #40C7EB;
+  border-color: #40C7EB;
+}
+
+.btn-mage:hover {
+  color: #fff;
+  background-color: #1dbde7;
+  border-color: #18b6e0;
+}
+
+.btn-mage:focus,
+.btn-mage.focus {
+  color: #fff;
+  background-color: #1dbde7;
+  border-color: #18b6e0;
+  box-shadow: 0 0 0 0.2rem rgba(59, 175, 206, 0.5);
+}
+
+.btn-mage.disabled,
+.btn-mage:disabled {
+  color: #212529;
+  background-color: #40C7EB;
+  border-color: #40C7EB;
+}
+
+.btn-mage:not(:disabled):not(.disabled):active,
+.btn-mage:not(:disabled):not(.disabled).active,
+.show > .btn-mage.dropdown-toggle {
+  color: #fff;
+  background-color: #18b6e0;
+  border-color: #16add5;
+}
+
+.btn-mage:not(:disabled):not(.disabled):active:focus,
+.btn-mage:not(:disabled):not(.disabled).active:focus,
+.show > .btn-mage.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(59, 175, 206, 0.5);
+}
+
+.btn-paladin {
+  color: #212529;
+  background-color: #F58CBA;
+  border-color: #F58CBA;
+}
+
+.btn-paladin:hover {
+  color: #212529;
+  background-color: #f269a5;
+  border-color: #f15d9e;
+}
+
+.btn-paladin:focus,
+.btn-paladin.focus {
+  color: #212529;
+  background-color: #f269a5;
+  border-color: #f15d9e;
+  box-shadow: 0 0 0 0.2rem rgba(213, 125, 164, 0.5);
+}
+
+.btn-paladin.disabled,
+.btn-paladin:disabled {
+  color: #212529;
+  background-color: #F58CBA;
+  border-color: #F58CBA;
+}
+
+.btn-paladin:not(:disabled):not(.disabled):active,
+.btn-paladin:not(:disabled):not(.disabled).active,
+.show > .btn-paladin.dropdown-toggle {
+  color: #fff;
+  background-color: #f15d9e;
+  border-color: #f05197;
+}
+
+.btn-paladin:not(:disabled):not(.disabled):active:focus,
+.btn-paladin:not(:disabled):not(.disabled).active:focus,
+.show > .btn-paladin.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(213, 125, 164, 0.5);
+}
+
+.btn-shaman {
+  color: #212529;
+  background-color: #F58CBA;
+  border-color: #F58CBA;
+}
+
+.btn-shaman:hover {
+  color: #212529;
+  background-color: #f269a5;
+  border-color: #f15d9e;
+}
+
+.btn-shaman:focus,
+.btn-shaman.focus {
+  color: #212529;
+  background-color: #f269a5;
+  border-color: #f15d9e;
+  box-shadow: 0 0 0 0.2rem rgba(213, 125, 164, 0.5);
+}
+
+.btn-shaman.disabled,
+.btn-shaman:disabled {
+  color: #212529;
+  background-color: #F58CBA;
+  border-color: #F58CBA;
+}
+
+.btn-shaman:not(:disabled):not(.disabled):active,
+.btn-shaman:not(:disabled):not(.disabled).active,
+.show > .btn-shaman.dropdown-toggle {
+  color: #fff;
+  background-color: #f15d9e;
+  border-color: #f05197;
+}
+
+.btn-shaman:not(:disabled):not(.disabled):active:focus,
+.btn-shaman:not(:disabled):not(.disabled).active:focus,
+.show > .btn-shaman.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(213, 125, 164, 0.5);
+}
+
+.btn-priest {
+  color: #212529;
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+.btn-priest:hover {
+  color: #212529;
+  background-color: #ececec;
+  border-color: #e6e6e6;
+}
+
+.btn-priest:focus,
+.btn-priest.focus {
+  color: #212529;
+  background-color: #ececec;
+  border-color: #e6e6e6;
+  box-shadow: 0 0 0 0.2rem rgba(222, 222, 223, 0.5);
+}
+
+.btn-priest.disabled,
+.btn-priest:disabled {
+  color: #212529;
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+.btn-priest:not(:disabled):not(.disabled):active,
+.btn-priest:not(:disabled):not(.disabled).active,
+.show > .btn-priest.dropdown-toggle {
+  color: #212529;
+  background-color: #e6e6e6;
+  border-color: #dfdfdf;
+}
+
+.btn-priest:not(:disabled):not(.disabled):active:focus,
+.btn-priest:not(:disabled):not(.disabled).active:focus,
+.show > .btn-priest.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(222, 222, 223, 0.5);
+}
+
+.btn-rogue {
+  color: #212529;
+  background-color: #FFF569;
+  border-color: #FFF569;
+}
+
+.btn-rogue:hover {
+  color: #212529;
+  background-color: #fff243;
+  border-color: #fff236;
+}
+
+.btn-rogue:focus,
+.btn-rogue.focus {
+  color: #212529;
+  background-color: #fff243;
+  border-color: #fff236;
+  box-shadow: 0 0 0 0.2rem rgba(222, 214, 95, 0.5);
+}
+
+.btn-rogue.disabled,
+.btn-rogue:disabled {
+  color: #212529;
+  background-color: #FFF569;
+  border-color: #FFF569;
+}
+
+.btn-rogue:not(:disabled):not(.disabled):active,
+.btn-rogue:not(:disabled):not(.disabled).active,
+.show > .btn-rogue.dropdown-toggle {
+  color: #212529;
+  background-color: #fff236;
+  border-color: #fff129;
+}
+
+.btn-rogue:not(:disabled):not(.disabled):active:focus,
+.btn-rogue:not(:disabled):not(.disabled).active:focus,
+.show > .btn-rogue.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(222, 214, 95, 0.5);
+}
+
+.btn-warlock {
+  color: #fff;
+  background-color: #8787ED;
+  border-color: #8787ED;
+}
+
+.btn-warlock:hover {
+  color: #fff;
+  background-color: #6666e8;
+  border-color: #5b5be6;
+}
+
+.btn-warlock:focus,
+.btn-warlock.focus {
+  color: #fff;
+  background-color: #6666e8;
+  border-color: #5b5be6;
+  box-shadow: 0 0 0 0.2rem rgba(153, 153, 240, 0.5);
+}
+
+.btn-warlock.disabled,
+.btn-warlock:disabled {
+  color: #fff;
+  background-color: #8787ED;
+  border-color: #8787ED;
+}
+
+.btn-warlock:not(:disabled):not(.disabled):active,
+.btn-warlock:not(:disabled):not(.disabled).active,
+.show > .btn-warlock.dropdown-toggle {
+  color: #fff;
+  background-color: #5b5be6;
+  border-color: #5050e5;
+}
+
+.btn-warlock:not(:disabled):not(.disabled):active:focus,
+.btn-warlock:not(:disabled):not(.disabled).active:focus,
+.show > .btn-warlock.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(153, 153, 240, 0.5);
+}
+
+.btn-warrior {
+  color: #212529;
+  background-color: #C79C6E;
+  border-color: #C79C6E;
+}
+
+.btn-warrior:hover {
+  color: #fff;
+  background-color: #bc8952;
+  border-color: #b98349;
+}
+
+.btn-warrior:focus,
+.btn-warrior.focus {
+  color: #fff;
+  background-color: #bc8952;
+  border-color: #b98349;
+  box-shadow: 0 0 0 0.2rem rgba(174, 138, 100, 0.5);
+}
+
+.btn-warrior.disabled,
+.btn-warrior:disabled {
+  color: #212529;
+  background-color: #C79C6E;
+  border-color: #C79C6E;
+}
+
+.btn-warrior:not(:disabled):not(.disabled):active,
+.btn-warrior:not(:disabled):not(.disabled).active,
+.show > .btn-warrior.dropdown-toggle {
+  color: #fff;
+  background-color: #b98349;
+  border-color: #b17c44;
+}
+
+.btn-warrior:not(:disabled):not(.disabled):active:focus,
+.btn-warrior:not(:disabled):not(.disabled).active:focus,
+.show > .btn-warrior.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(174, 138, 100, 0.5);
+}
+
 .btn-outline-primary {
   color: #3490dc;
   border-color: #3490dc;
@@ -3310,6 +3886,330 @@ fieldset:disabled a.btn {
   box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5);
 }
 
+.btn-outline-druid {
+  color: #FF7D0A;
+  border-color: #FF7D0A;
+}
+
+.btn-outline-druid:hover {
+  color: #212529;
+  background-color: #FF7D0A;
+  border-color: #FF7D0A;
+}
+
+.btn-outline-druid:focus,
+.btn-outline-druid.focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 125, 10, 0.5);
+}
+
+.btn-outline-druid.disabled,
+.btn-outline-druid:disabled {
+  color: #FF7D0A;
+  background-color: transparent;
+}
+
+.btn-outline-druid:not(:disabled):not(.disabled):active,
+.btn-outline-druid:not(:disabled):not(.disabled).active,
+.show > .btn-outline-druid.dropdown-toggle {
+  color: #212529;
+  background-color: #FF7D0A;
+  border-color: #FF7D0A;
+}
+
+.btn-outline-druid:not(:disabled):not(.disabled):active:focus,
+.btn-outline-druid:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-druid.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 125, 10, 0.5);
+}
+
+.btn-outline-hunter {
+  color: #A9D271;
+  border-color: #A9D271;
+}
+
+.btn-outline-hunter:hover {
+  color: #212529;
+  background-color: #A9D271;
+  border-color: #A9D271;
+}
+
+.btn-outline-hunter:focus,
+.btn-outline-hunter.focus {
+  box-shadow: 0 0 0 0.2rem rgba(169, 210, 113, 0.5);
+}
+
+.btn-outline-hunter.disabled,
+.btn-outline-hunter:disabled {
+  color: #A9D271;
+  background-color: transparent;
+}
+
+.btn-outline-hunter:not(:disabled):not(.disabled):active,
+.btn-outline-hunter:not(:disabled):not(.disabled).active,
+.show > .btn-outline-hunter.dropdown-toggle {
+  color: #212529;
+  background-color: #A9D271;
+  border-color: #A9D271;
+}
+
+.btn-outline-hunter:not(:disabled):not(.disabled):active:focus,
+.btn-outline-hunter:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-hunter.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(169, 210, 113, 0.5);
+}
+
+.btn-outline-mage {
+  color: #40C7EB;
+  border-color: #40C7EB;
+}
+
+.btn-outline-mage:hover {
+  color: #212529;
+  background-color: #40C7EB;
+  border-color: #40C7EB;
+}
+
+.btn-outline-mage:focus,
+.btn-outline-mage.focus {
+  box-shadow: 0 0 0 0.2rem rgba(64, 199, 235, 0.5);
+}
+
+.btn-outline-mage.disabled,
+.btn-outline-mage:disabled {
+  color: #40C7EB;
+  background-color: transparent;
+}
+
+.btn-outline-mage:not(:disabled):not(.disabled):active,
+.btn-outline-mage:not(:disabled):not(.disabled).active,
+.show > .btn-outline-mage.dropdown-toggle {
+  color: #212529;
+  background-color: #40C7EB;
+  border-color: #40C7EB;
+}
+
+.btn-outline-mage:not(:disabled):not(.disabled):active:focus,
+.btn-outline-mage:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-mage.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(64, 199, 235, 0.5);
+}
+
+.btn-outline-paladin {
+  color: #F58CBA;
+  border-color: #F58CBA;
+}
+
+.btn-outline-paladin:hover {
+  color: #212529;
+  background-color: #F58CBA;
+  border-color: #F58CBA;
+}
+
+.btn-outline-paladin:focus,
+.btn-outline-paladin.focus {
+  box-shadow: 0 0 0 0.2rem rgba(245, 140, 186, 0.5);
+}
+
+.btn-outline-paladin.disabled,
+.btn-outline-paladin:disabled {
+  color: #F58CBA;
+  background-color: transparent;
+}
+
+.btn-outline-paladin:not(:disabled):not(.disabled):active,
+.btn-outline-paladin:not(:disabled):not(.disabled).active,
+.show > .btn-outline-paladin.dropdown-toggle {
+  color: #212529;
+  background-color: #F58CBA;
+  border-color: #F58CBA;
+}
+
+.btn-outline-paladin:not(:disabled):not(.disabled):active:focus,
+.btn-outline-paladin:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-paladin.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(245, 140, 186, 0.5);
+}
+
+.btn-outline-shaman {
+  color: #F58CBA;
+  border-color: #F58CBA;
+}
+
+.btn-outline-shaman:hover {
+  color: #212529;
+  background-color: #F58CBA;
+  border-color: #F58CBA;
+}
+
+.btn-outline-shaman:focus,
+.btn-outline-shaman.focus {
+  box-shadow: 0 0 0 0.2rem rgba(245, 140, 186, 0.5);
+}
+
+.btn-outline-shaman.disabled,
+.btn-outline-shaman:disabled {
+  color: #F58CBA;
+  background-color: transparent;
+}
+
+.btn-outline-shaman:not(:disabled):not(.disabled):active,
+.btn-outline-shaman:not(:disabled):not(.disabled).active,
+.show > .btn-outline-shaman.dropdown-toggle {
+  color: #212529;
+  background-color: #F58CBA;
+  border-color: #F58CBA;
+}
+
+.btn-outline-shaman:not(:disabled):not(.disabled):active:focus,
+.btn-outline-shaman:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-shaman.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(245, 140, 186, 0.5);
+}
+
+.btn-outline-priest {
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+.btn-outline-priest:hover {
+  color: #212529;
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+.btn-outline-priest:focus,
+.btn-outline-priest.focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5);
+}
+
+.btn-outline-priest.disabled,
+.btn-outline-priest:disabled {
+  color: #FFFFFF;
+  background-color: transparent;
+}
+
+.btn-outline-priest:not(:disabled):not(.disabled):active,
+.btn-outline-priest:not(:disabled):not(.disabled).active,
+.show > .btn-outline-priest.dropdown-toggle {
+  color: #212529;
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+.btn-outline-priest:not(:disabled):not(.disabled):active:focus,
+.btn-outline-priest:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-priest.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5);
+}
+
+.btn-outline-rogue {
+  color: #FFF569;
+  border-color: #FFF569;
+}
+
+.btn-outline-rogue:hover {
+  color: #212529;
+  background-color: #FFF569;
+  border-color: #FFF569;
+}
+
+.btn-outline-rogue:focus,
+.btn-outline-rogue.focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 245, 105, 0.5);
+}
+
+.btn-outline-rogue.disabled,
+.btn-outline-rogue:disabled {
+  color: #FFF569;
+  background-color: transparent;
+}
+
+.btn-outline-rogue:not(:disabled):not(.disabled):active,
+.btn-outline-rogue:not(:disabled):not(.disabled).active,
+.show > .btn-outline-rogue.dropdown-toggle {
+  color: #212529;
+  background-color: #FFF569;
+  border-color: #FFF569;
+}
+
+.btn-outline-rogue:not(:disabled):not(.disabled):active:focus,
+.btn-outline-rogue:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-rogue.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 245, 105, 0.5);
+}
+
+.btn-outline-warlock {
+  color: #8787ED;
+  border-color: #8787ED;
+}
+
+.btn-outline-warlock:hover {
+  color: #fff;
+  background-color: #8787ED;
+  border-color: #8787ED;
+}
+
+.btn-outline-warlock:focus,
+.btn-outline-warlock.focus {
+  box-shadow: 0 0 0 0.2rem rgba(135, 135, 237, 0.5);
+}
+
+.btn-outline-warlock.disabled,
+.btn-outline-warlock:disabled {
+  color: #8787ED;
+  background-color: transparent;
+}
+
+.btn-outline-warlock:not(:disabled):not(.disabled):active,
+.btn-outline-warlock:not(:disabled):not(.disabled).active,
+.show > .btn-outline-warlock.dropdown-toggle {
+  color: #fff;
+  background-color: #8787ED;
+  border-color: #8787ED;
+}
+
+.btn-outline-warlock:not(:disabled):not(.disabled):active:focus,
+.btn-outline-warlock:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-warlock.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(135, 135, 237, 0.5);
+}
+
+.btn-outline-warrior {
+  color: #C79C6E;
+  border-color: #C79C6E;
+}
+
+.btn-outline-warrior:hover {
+  color: #212529;
+  background-color: #C79C6E;
+  border-color: #C79C6E;
+}
+
+.btn-outline-warrior:focus,
+.btn-outline-warrior.focus {
+  box-shadow: 0 0 0 0.2rem rgba(199, 156, 110, 0.5);
+}
+
+.btn-outline-warrior.disabled,
+.btn-outline-warrior:disabled {
+  color: #C79C6E;
+  background-color: transparent;
+}
+
+.btn-outline-warrior:not(:disabled):not(.disabled):active,
+.btn-outline-warrior:not(:disabled):not(.disabled).active,
+.show > .btn-outline-warrior.dropdown-toggle {
+  color: #212529;
+  background-color: #C79C6E;
+  border-color: #C79C6E;
+}
+
+.btn-outline-warrior:not(:disabled):not(.disabled):active:focus,
+.btn-outline-warrior:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-warrior.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(199, 156, 110, 0.5);
+}
+
 .btn-link {
   font-weight: 400;
   color: #3490dc;
@@ -3432,7 +4332,7 @@ input[type=button].btn-block {
   padding: 0.5rem 0;
   margin: 0.125rem 0 0;
   font-size: 1rem;
-  color: #212529;
+  color: #ffffff;
   text-align: left;
   list-style: none;
   background-color: #fff;
@@ -4265,15 +5165,15 @@ input[type=button].btn-block {
 }
 
 .custom-range:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 0 1px #f8fafc, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+  box-shadow: 0 0 0 1px #1c1c1c, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
 }
 
 .custom-range:focus::-moz-range-thumb {
-  box-shadow: 0 0 0 1px #f8fafc, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+  box-shadow: 0 0 0 1px #1c1c1c, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
 }
 
 .custom-range:focus::-ms-thumb {
-  box-shadow: 0 0 0 1px #f8fafc, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+  box-shadow: 0 0 0 1px #1c1c1c, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
 }
 
 .custom-range::-moz-focus-outer {
@@ -4479,8 +5379,8 @@ input[type=button].btn-block {
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
   color: #495057;
-  background-color: #f8fafc;
-  border-color: #dee2e6 #dee2e6 #f8fafc;
+  background-color: #1c1c1c;
+  border-color: #dee2e6 #dee2e6 #1c1c1c;
 }
 
 .nav-tabs .dropdown-menu {
@@ -5484,6 +6384,159 @@ a.badge-dark.focus {
   box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5);
 }
 
+.badge-druid {
+  color: #212529;
+  background-color: #FF7D0A;
+}
+
+a.badge-druid:hover,
+a.badge-druid:focus {
+  color: #212529;
+  background-color: #d66400;
+}
+
+a.badge-druid:focus,
+a.badge-druid.focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(255, 125, 10, 0.5);
+}
+
+.badge-hunter {
+  color: #212529;
+  background-color: #A9D271;
+}
+
+a.badge-hunter:hover,
+a.badge-hunter:focus {
+  color: #212529;
+  background-color: #92c64a;
+}
+
+a.badge-hunter:focus,
+a.badge-hunter.focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(169, 210, 113, 0.5);
+}
+
+.badge-mage {
+  color: #212529;
+  background-color: #40C7EB;
+}
+
+a.badge-mage:hover,
+a.badge-mage:focus {
+  color: #212529;
+  background-color: #18b6e0;
+}
+
+a.badge-mage:focus,
+a.badge-mage.focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(64, 199, 235, 0.5);
+}
+
+.badge-paladin {
+  color: #212529;
+  background-color: #F58CBA;
+}
+
+a.badge-paladin:hover,
+a.badge-paladin:focus {
+  color: #212529;
+  background-color: #f15d9e;
+}
+
+a.badge-paladin:focus,
+a.badge-paladin.focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(245, 140, 186, 0.5);
+}
+
+.badge-shaman {
+  color: #212529;
+  background-color: #F58CBA;
+}
+
+a.badge-shaman:hover,
+a.badge-shaman:focus {
+  color: #212529;
+  background-color: #f15d9e;
+}
+
+a.badge-shaman:focus,
+a.badge-shaman.focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(245, 140, 186, 0.5);
+}
+
+.badge-priest {
+  color: #212529;
+  background-color: #FFFFFF;
+}
+
+a.badge-priest:hover,
+a.badge-priest:focus {
+  color: #212529;
+  background-color: #e6e6e6;
+}
+
+a.badge-priest:focus,
+a.badge-priest.focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5);
+}
+
+.badge-rogue {
+  color: #212529;
+  background-color: #FFF569;
+}
+
+a.badge-rogue:hover,
+a.badge-rogue:focus {
+  color: #212529;
+  background-color: #fff236;
+}
+
+a.badge-rogue:focus,
+a.badge-rogue.focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(255, 245, 105, 0.5);
+}
+
+.badge-warlock {
+  color: #fff;
+  background-color: #8787ED;
+}
+
+a.badge-warlock:hover,
+a.badge-warlock:focus {
+  color: #fff;
+  background-color: #5b5be6;
+}
+
+a.badge-warlock:focus,
+a.badge-warlock.focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(135, 135, 237, 0.5);
+}
+
+.badge-warrior {
+  color: #212529;
+  background-color: #C79C6E;
+}
+
+a.badge-warrior:hover,
+a.badge-warrior:focus {
+  color: #212529;
+  background-color: #b98349;
+}
+
+a.badge-warrior:focus,
+a.badge-warrior.focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(199, 156, 110, 0.5);
+}
+
 .jumbotron {
   padding: 2rem 1rem;
   margin-bottom: 2rem;
@@ -5643,6 +6696,132 @@ a.badge-dark.focus {
   color: #040505;
 }
 
+.alert-druid {
+  color: #854105;
+  background-color: #ffe5ce;
+  border-color: #ffdbba;
+}
+
+.alert-druid hr {
+  border-top-color: #ffcea1;
+}
+
+.alert-druid .alert-link {
+  color: #542903;
+}
+
+.alert-hunter {
+  color: #586d3b;
+  background-color: #eef6e3;
+  border-color: #e7f2d7;
+}
+
+.alert-hunter hr {
+  border-top-color: #dbecc4;
+}
+
+.alert-hunter .alert-link {
+  color: #3d4c29;
+}
+
+.alert-mage {
+  color: #21677a;
+  background-color: #d9f4fb;
+  border-color: #caeff9;
+}
+
+.alert-mage hr {
+  border-top-color: #b3e8f6;
+}
+
+.alert-mage .alert-link {
+  color: #164552;
+}
+
+.alert-paladin {
+  color: #7f4961;
+  background-color: #fde8f1;
+  border-color: #fcdfec;
+}
+
+.alert-paladin hr {
+  border-top-color: #fac8de;
+}
+
+.alert-paladin .alert-link {
+  color: #5f3648;
+}
+
+.alert-shaman {
+  color: #7f4961;
+  background-color: #fde8f1;
+  border-color: #fcdfec;
+}
+
+.alert-shaman hr {
+  border-top-color: #fac8de;
+}
+
+.alert-shaman .alert-link {
+  color: #5f3648;
+}
+
+.alert-priest {
+  color: #858585;
+  background-color: white;
+  border-color: white;
+}
+
+.alert-priest hr {
+  border-top-color: #f2f2f2;
+}
+
+.alert-priest .alert-link {
+  color: #6c6c6c;
+}
+
+.alert-rogue {
+  color: #857f37;
+  background-color: #fffde1;
+  border-color: #fffcd5;
+}
+
+.alert-rogue hr {
+  border-top-color: #fffabc;
+}
+
+.alert-rogue .alert-link {
+  color: #615d28;
+}
+
+.alert-warlock {
+  color: #46467b;
+  background-color: #e7e7fb;
+  border-color: #ddddfa;
+}
+
+.alert-warlock hr {
+  border-top-color: #c7c7f7;
+}
+
+.alert-warlock .alert-link {
+  color: #34345a;
+}
+
+.alert-warrior {
+  color: #675139;
+  background-color: #f4ebe2;
+  border-color: #efe3d6;
+}
+
+.alert-warrior hr {
+  border-top-color: #e8d6c4;
+}
+
+.alert-warrior .alert-link {
+  color: #463727;
+}
+
 @-webkit-keyframes progress-bar-stripes {
   from {
     background-position: 1rem 0;
@@ -5738,7 +6917,7 @@ a.badge-dark.focus {
 }
 
 .list-group-item-action:active {
-  color: #212529;
+  color: #ffffff;
   background-color: #e9ecef;
 }
 
@@ -6081,6 +7260,159 @@ a.badge-dark.focus {
   border-color: #1b1e21;
 }
 
+.list-group-item-druid {
+  color: #854105;
+  background-color: #ffdbba;
+}
+
+.list-group-item-druid.list-group-item-action:hover,
+.list-group-item-druid.list-group-item-action:focus {
+  color: #854105;
+  background-color: #ffcea1;
+}
+
+.list-group-item-druid.list-group-item-action.active {
+  color: #fff;
+  background-color: #854105;
+  border-color: #854105;
+}
+
+.list-group-item-hunter {
+  color: #586d3b;
+  background-color: #e7f2d7;
+}
+
+.list-group-item-hunter.list-group-item-action:hover,
+.list-group-item-hunter.list-group-item-action:focus {
+  color: #586d3b;
+  background-color: #dbecc4;
+}
+
+.list-group-item-hunter.list-group-item-action.active {
+  color: #fff;
+  background-color: #586d3b;
+  border-color: #586d3b;
+}
+
+.list-group-item-mage {
+  color: #21677a;
+  background-color: #caeff9;
+}
+
+.list-group-item-mage.list-group-item-action:hover,
+.list-group-item-mage.list-group-item-action:focus {
+  color: #21677a;
+  background-color: #b3e8f6;
+}
+
+.list-group-item-mage.list-group-item-action.active {
+  color: #fff;
+  background-color: #21677a;
+  border-color: #21677a;
+}
+
+.list-group-item-paladin {
+  color: #7f4961;
+  background-color: #fcdfec;
+}
+
+.list-group-item-paladin.list-group-item-action:hover,
+.list-group-item-paladin.list-group-item-action:focus {
+  color: #7f4961;
+  background-color: #fac8de;
+}
+
+.list-group-item-paladin.list-group-item-action.active {
+  color: #fff;
+  background-color: #7f4961;
+  border-color: #7f4961;
+}
+
+.list-group-item-shaman {
+  color: #7f4961;
+  background-color: #fcdfec;
+}
+
+.list-group-item-shaman.list-group-item-action:hover,
+.list-group-item-shaman.list-group-item-action:focus {
+  color: #7f4961;
+  background-color: #fac8de;
+}
+
+.list-group-item-shaman.list-group-item-action.active {
+  color: #fff;
+  background-color: #7f4961;
+  border-color: #7f4961;
+}
+
+.list-group-item-priest {
+  color: #858585;
+  background-color: white;
+}
+
+.list-group-item-priest.list-group-item-action:hover,
+.list-group-item-priest.list-group-item-action:focus {
+  color: #858585;
+  background-color: #f2f2f2;
+}
+
+.list-group-item-priest.list-group-item-action.active {
+  color: #fff;
+  background-color: #858585;
+  border-color: #858585;
+}
+
+.list-group-item-rogue {
+  color: #857f37;
+  background-color: #fffcd5;
+}
+
+.list-group-item-rogue.list-group-item-action:hover,
+.list-group-item-rogue.list-group-item-action:focus {
+  color: #857f37;
+  background-color: #fffabc;
+}
+
+.list-group-item-rogue.list-group-item-action.active {
+  color: #fff;
+  background-color: #857f37;
+  border-color: #857f37;
+}
+
+.list-group-item-warlock {
+  color: #46467b;
+  background-color: #ddddfa;
+}
+
+.list-group-item-warlock.list-group-item-action:hover,
+.list-group-item-warlock.list-group-item-action:focus {
+  color: #46467b;
+  background-color: #c7c7f7;
+}
+
+.list-group-item-warlock.list-group-item-action.active {
+  color: #fff;
+  background-color: #46467b;
+  border-color: #46467b;
+}
+
+.list-group-item-warrior {
+  color: #675139;
+  background-color: #efe3d6;
+}
+
+.list-group-item-warrior.list-group-item-action:hover,
+.list-group-item-warrior.list-group-item-action:focus {
+  color: #675139;
+  background-color: #e8d6c4;
+}
+
+.list-group-item-warrior.list-group-item-action.active {
+  color: #fff;
+  background-color: #675139;
+  border-color: #675139;
+}
+
 .close {
   float: right;
   font-size: 1.5rem;
@@ -6256,6 +7588,7 @@ a.close.disabled {
   display: flex;
   flex-direction: column;
   width: 100%;
+  color: #212529;
   pointer-events: auto;
   background-color: #fff;
   background-clip: padding-box;
@@ -6670,7 +8003,7 @@ a.close.disabled {
 
 .popover-body {
   padding: 0.5rem 0.75rem;
-  color: #212529;
+  color: #ffffff;
 }
 
 .carousel {
@@ -7042,6 +8375,105 @@ button.bg-dark:focus {
   background-color: #1d2124 !important;
 }
 
+.bg-druid {
+  background-color: #FF7D0A !important;
+}
+
+a.bg-druid:hover,
+a.bg-druid:focus,
+button.bg-druid:hover,
+button.bg-druid:focus {
+  background-color: #d66400 !important;
+}
+
+.bg-hunter {
+  background-color: #A9D271 !important;
+}
+
+a.bg-hunter:hover,
+a.bg-hunter:focus,
+button.bg-hunter:hover,
+button.bg-hunter:focus {
+  background-color: #92c64a !important;
+}
+
+.bg-mage {
+  background-color: #40C7EB !important;
+}
+
+a.bg-mage:hover,
+a.bg-mage:focus,
+button.bg-mage:hover,
+button.bg-mage:focus {
+  background-color: #18b6e0 !important;
+}
+
+.bg-paladin {
+  background-color: #F58CBA !important;
+}
+
+a.bg-paladin:hover,
+a.bg-paladin:focus,
+button.bg-paladin:hover,
+button.bg-paladin:focus {
+  background-color: #f15d9e !important;
+}
+
+.bg-shaman {
+  background-color: #F58CBA !important;
+}
+
+a.bg-shaman:hover,
+a.bg-shaman:focus,
+button.bg-shaman:hover,
+button.bg-shaman:focus {
+  background-color: #f15d9e !important;
+}
+
+.bg-priest {
+  background-color: #FFFFFF !important;
+}
+
+a.bg-priest:hover,
+a.bg-priest:focus,
+button.bg-priest:hover,
+button.bg-priest:focus {
+  background-color: #e6e6e6 !important;
+}
+
+.bg-rogue {
+  background-color: #FFF569 !important;
+}
+
+a.bg-rogue:hover,
+a.bg-rogue:focus,
+button.bg-rogue:hover,
+button.bg-rogue:focus {
+  background-color: #fff236 !important;
+}
+
+.bg-warlock {
+  background-color: #8787ED !important;
+}
+
+a.bg-warlock:hover,
+a.bg-warlock:focus,
+button.bg-warlock:hover,
+button.bg-warlock:focus {
+  background-color: #5b5be6 !important;
+}
+
+.bg-warrior {
+  background-color: #C79C6E !important;
+}
+
+a.bg-warrior:hover,
+a.bg-warrior:focus,
+button.bg-warrior:hover,
+button.bg-warrior:focus {
+  background-color: #b98349 !important;
+}
+
 .bg-white {
   background-color: #fff !important;
 }
@@ -7120,6 +8552,42 @@ button.bg-dark:focus {
 
 .border-dark {
   border-color: #343a40 !important;
+}
+
+.border-druid {
+  border-color: #FF7D0A !important;
+}
+
+.border-hunter {
+  border-color: #A9D271 !important;
+}
+
+.border-mage {
+  border-color: #40C7EB !important;
+}
+
+.border-paladin {
+  border-color: #F58CBA !important;
+}
+
+.border-shaman {
+  border-color: #F58CBA !important;
+}
+
+.border-priest {
+  border-color: #FFFFFF !important;
+}
+
+.border-rogue {
+  border-color: #FFF569 !important;
+}
+
+.border-warlock {
+  border-color: #8787ED !important;
+}
+
+.border-warrior {
+  border-color: #C79C6E !important;
 }
 
 .border-white {
@@ -10739,8 +12207,89 @@ a.text-dark:focus {
   color: #121416 !important;
 }
 
+.text-druid {
+  color: #FF7D0A !important;
+}
+
+a.text-druid:hover,
+a.text-druid:focus {
+  color: #bd5800 !important;
+}
+
+.text-hunter {
+  color: #A9D271 !important;
+}
+
+a.text-hunter:hover,
+a.text-hunter:focus {
+  color: #85bb3b !important;
+}
+
+.text-mage {
+  color: #40C7EB !important;
+}
+
+a.text-mage:hover,
+a.text-mage:focus {
+  color: #15a3c9 !important;
+}
+
+.text-paladin {
+  color: #F58CBA !important;
+}
+
+a.text-paladin:hover,
+a.text-paladin:focus {
+  color: #ef4690 !important;
+}
+
+.text-shaman {
+  color: #F58CBA !important;
+}
+
+a.text-shaman:hover,
+a.text-shaman:focus {
+  color: #ef4690 !important;
+}
+
+.text-priest {
+  color: #FFFFFF !important;
+}
+
+a.text-priest:hover,
+a.text-priest:focus {
+  color: #d9d9d9 !important;
+}
+
+.text-rogue {
+  color: #FFF569 !important;
+}
+
+a.text-rogue:hover,
+a.text-rogue:focus {
+  color: #fff01d !important;
+}
+
+.text-warlock {
+  color: #8787ED !important;
+}
+
+a.text-warlock:hover,
+a.text-warlock:focus {
+  color: #4444e3 !important;
+}
+
+.text-warrior {
+  color: #C79C6E !important;
+}
+
+a.text-warrior:hover,
+a.text-warrior:focus {
+  color: #a87641 !important;
+}
+
 .text-body {
-  color: #212529 !important;
+  color: #ffffff !important;
 }
 
 .text-muted {

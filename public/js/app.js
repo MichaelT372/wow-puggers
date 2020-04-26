@@ -2149,6 +2149,10 @@ __webpack_require__.r(__webpack_exports__);
     softReserves: {
       required: true,
       type: Boolean
+    },
+    faction: {
+      required: true,
+      type: String
     }
   },
   data: function data() {
@@ -2164,15 +2168,19 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     classNames: function classNames() {
+      var _this = this;
+
       return this.classes.map(function (c) {
         return c["class"];
+      }).filter(function (n) {
+        return _this.faction === 'Horde' ? n !== 'Paladin' : n !== 'Shaman';
       });
     },
     classSpecs: function classSpecs() {
-      var _this = this;
+      var _this2 = this;
 
       var selectedClass = this.classes.find(function (c) {
-        return c["class"] === _this.signup["class"];
+        return c["class"] === _this2.signup["class"];
       });
 
       if (selectedClass) {
@@ -2207,6 +2215,680 @@ __webpack_require__.r(__webpack_exports__);
           console.log(err);
         });
       }
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RaidSignups.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/RaidSignups.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _SignupClassList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SignupClassList */ "./resources/js/components/SignupClassList.vue");
+/* harmony import */ var _WowIcon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./WowIcon */ "./resources/js/components/WowIcon.vue");
+/* harmony import */ var _SignupClassListHeader__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SignupClassListHeader */ "./resources/js/components/SignupClassListHeader.vue");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "RaidSignups",
+  components: {
+    SignupClassListHeader: _SignupClassListHeader__WEBPACK_IMPORTED_MODULE_2__["default"],
+    SignupClassList: _SignupClassList__WEBPACK_IMPORTED_MODULE_0__["default"],
+    WowIcon: _WowIcon__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  props: {
+    allSignups: {
+      required: true,
+      type: Array
+    },
+    faction: {
+      required: true,
+      type: String
+    },
+    location: {
+      required: true,
+      type: String
+    }
+  },
+  data: function data() {
+    return {
+      view: 'signups',
+      tankSpecs: ['Protection', 'Feral (Tank)'],
+      healerSpecs: ['Holy', 'Restoration', 'Discipline'],
+      meleeDpsSpecs: ['Arms', 'Fury', 'Enhancement', 'Retribution', 'Assassination', 'Combat', 'Subtlety', 'Feral (DPS)'],
+      rangedDpsSpecs: ['Arcane', 'Fire', 'Frost', 'Survival', 'Beast Mastery', 'Marksmanship', 'Affliction', 'Demonology', 'Destruction', 'Shadow', 'Balance']
+    };
+  },
+  computed: {
+    signups: function signups() {
+      var _this = this;
+
+      return this.allSignups.filter(function (s) {
+        return _this.faction === 'Horde' ? s["class"] !== 'Paladin' : s["class"] !== 'Shaman';
+      }).sort(function (a, b) {
+        return b.confirmed - a.confirmed;
+      });
+    },
+    warriors: function warriors() {
+      return this.signups.filter(function (s) {
+        return s["class"] === 'Warrior';
+      });
+    },
+    paladins: function paladins() {
+      return this.signups.filter(function (s) {
+        return s["class"] === 'Paladin';
+      });
+    },
+    shamans: function shamans() {
+      return this.signups.filter(function (s) {
+        return s["class"] === 'Shaman';
+      });
+    },
+    mages: function mages() {
+      return this.signups.filter(function (s) {
+        return s["class"] === 'Mage';
+      });
+    },
+    rogues: function rogues() {
+      return this.signups.filter(function (s) {
+        return s["class"] === 'Rogue';
+      });
+    },
+    hunters: function hunters() {
+      return this.signups.filter(function (s) {
+        return s["class"] === 'Hunter';
+      });
+    },
+    warlocks: function warlocks() {
+      return this.signups.filter(function (s) {
+        return s["class"] === 'Warlock';
+      });
+    },
+    druids: function druids() {
+      return this.signups.filter(function (s) {
+        return s["class"] === 'Druid';
+      });
+    },
+    priests: function priests() {
+      return this.signups.filter(function (s) {
+        return s["class"] === 'Priest';
+      });
+    },
+    tanks: function tanks() {
+      var _this2 = this;
+
+      return this.signups.filter(function (s) {
+        return _this2.tankSpecs.includes(s.spec);
+      });
+    },
+    healers: function healers() {
+      var _this3 = this;
+
+      return this.signups.filter(function (s) {
+        return _this3.healerSpecs.includes(s.spec);
+      });
+    },
+    meleeDps: function meleeDps() {
+      var _this4 = this;
+
+      return this.signups.filter(function (s) {
+        return _this4.meleeDpsSpecs.includes(s.spec);
+      });
+    },
+    rangedDps: function rangedDps() {
+      var _this5 = this;
+
+      return this.signups.filter(function (s) {
+        return _this5.rangedDpsSpecs.includes(s.spec);
+      });
+    },
+    dps: function dps() {
+      return [].concat(_toConsumableArray(this.meleeDps), _toConsumableArray(this.rangedDps));
+    },
+    softReserves: function softReserves() {
+      var softReserves = {};
+      this.signups.forEach(function (s) {
+        if (!softReserves[s.soft_reserve]) {
+          softReserves[s.soft_reserve] = [];
+        }
+
+        softReserves[s.soft_reserve].push(s);
+      });
+      return softReserves;
+    },
+    douses: function douses() {
+      return this.signups.filter(function (s) {
+        return s.douse;
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SignupClassList.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/SignupClassList.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _WowIcon__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./WowIcon */ "./resources/js/components/WowIcon.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "SignupClassList",
+  components: {
+    WowIcon: _WowIcon__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  props: {
+    players: {
+      required: true,
+      type: Array
+    },
+    location: {
+      type: String,
+      "default": ''
+    },
+    classIcon: {
+      type: Boolean,
+      "default": false
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SignupClassListHeader.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/SignupClassListHeader.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "SignupClassListHeader",
+  props: {
+    type: {
+      required: true,
+      type: String
+    },
+    count: {
+      required: true,
+      type: Number
+    }
+  },
+  data: function data() {
+    return {
+      styles: [{
+        "class": 'warrior',
+        label: 'Warriors',
+        text: 'text-warrior'
+      }, {
+        "class": 'rogue',
+        label: 'Rogues',
+        text: 'text-rogue'
+      }, {
+        "class": 'mage',
+        label: 'Mages',
+        text: 'text-mage'
+      }, {
+        "class": 'hunter',
+        label: 'Hunters',
+        text: 'text-hunter'
+      }, {
+        "class": 'warlock',
+        label: 'Warlocks',
+        text: 'text-warlock'
+      }, {
+        "class": 'druid',
+        label: 'Druids',
+        text: 'text-druid'
+      }, {
+        "class": 'priest',
+        label: 'Priests',
+        text: 'text-priest'
+      }, {
+        "class": 'paladin',
+        label: 'Paladins',
+        text: 'text-paladin'
+      }, {
+        "class": 'shaman',
+        label: 'Shamans',
+        text: 'text-shaman'
+      }]
+    };
+  },
+  computed: {
+    style: function style() {
+      var _this = this;
+
+      return this.styles.find(function (s) {
+        return s["class"] === _this.type;
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/WowIcon.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/WowIcon.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "WowIcon",
+  props: {
+    type: {
+      required: true,
+      type: String
+    },
+    size: {
+      type: Number,
+      "default": 20
+    }
+  },
+  data: function data() {
+    return {
+      icons: [{
+        type: 'warrior',
+        src: __webpack_require__(/*! ../../images/warrior.png */ "./resources/images/warrior.png"),
+        alt: 'warrior icon'
+      }, {
+        type: 'warrior-arms',
+        src: __webpack_require__(/*! ../../images/warrior-arms.png */ "./resources/images/warrior-arms.png"),
+        alt: 'warrior arms icon'
+      }, {
+        type: 'warrior-fury',
+        src: __webpack_require__(/*! ../../images/warrior-fury.png */ "./resources/images/warrior-fury.png"),
+        alt: 'warrior fury icon'
+      }, {
+        type: 'warrior-protection',
+        src: __webpack_require__(/*! ../../images/warrior-protection.png */ "./resources/images/warrior-protection.png"),
+        alt: 'warrior protection icon'
+      }, {
+        type: 'rogue',
+        src: __webpack_require__(/*! ../../images/rogue.png */ "./resources/images/rogue.png"),
+        alt: 'rogue icon'
+      }, {
+        type: 'rogue-assassination',
+        src: __webpack_require__(/*! ../../images/rogue-assassination.png */ "./resources/images/rogue-assassination.png"),
+        alt: 'rogue assassination icon'
+      }, {
+        type: 'rogue-combat',
+        src: __webpack_require__(/*! ../../images/rogue-combat.png */ "./resources/images/rogue-combat.png"),
+        alt: 'rogue combat icon'
+      }, {
+        type: 'rogue-subtlety',
+        src: __webpack_require__(/*! ../../images/rogue-subtlety.png */ "./resources/images/rogue-subtlety.png"),
+        alt: 'rogue subtlety icon'
+      }, {
+        type: 'mage',
+        src: __webpack_require__(/*! ../../images/mage.png */ "./resources/images/mage.png"),
+        alt: 'mage icon'
+      }, {
+        type: 'mage-arcane',
+        src: __webpack_require__(/*! ../../images/mage-arcane.png */ "./resources/images/mage-arcane.png"),
+        alt: 'arcane icon'
+      }, {
+        type: 'mage-fire',
+        src: __webpack_require__(/*! ../../images/mage-fire.png */ "./resources/images/mage-fire.png"),
+        alt: 'fire icon'
+      }, {
+        type: 'mage-frost',
+        src: __webpack_require__(/*! ../../images/mage-frost.png */ "./resources/images/mage-frost.png"),
+        alt: 'frost icon'
+      }, {
+        type: 'hunter',
+        src: __webpack_require__(/*! ../../images/hunter.png */ "./resources/images/hunter.png"),
+        alt: 'hunter icon'
+      }, {
+        type: 'hunter-beast mastery',
+        src: __webpack_require__(/*! ../../images/hunter-beast-mastery.png */ "./resources/images/hunter-beast-mastery.png"),
+        alt: 'bm icon'
+      }, {
+        type: 'hunter-marksmanship',
+        src: __webpack_require__(/*! ../../images/hunter-marksmanship.png */ "./resources/images/hunter-marksmanship.png"),
+        alt: 'mm icon'
+      }, {
+        type: 'hunter-survival',
+        src: __webpack_require__(/*! ../../images/hunter-survival.png */ "./resources/images/hunter-survival.png"),
+        alt: 'survival icon'
+      }, {
+        type: 'warlock',
+        src: __webpack_require__(/*! ../../images/warlock.png */ "./resources/images/warlock.png"),
+        alt: 'warlock icon'
+      }, {
+        type: 'warlock-affliction',
+        src: __webpack_require__(/*! ../../images/warlock-affliction.png */ "./resources/images/warlock-affliction.png"),
+        alt: 'affliction icon'
+      }, {
+        type: 'warlock-demonology',
+        src: __webpack_require__(/*! ../../images/warlock-demonology.png */ "./resources/images/warlock-demonology.png"),
+        alt: 'demonology icon'
+      }, {
+        type: 'warlock-destruction',
+        src: __webpack_require__(/*! ../../images/warlock-destruction.png */ "./resources/images/warlock-destruction.png"),
+        alt: 'destruction icon'
+      }, {
+        type: 'druid',
+        src: __webpack_require__(/*! ../../images/druid.png */ "./resources/images/druid.png"),
+        alt: 'druid icon'
+      }, {
+        type: 'druid-balance',
+        src: __webpack_require__(/*! ../../images/druid-balance.png */ "./resources/images/druid-balance.png"),
+        alt: 'balance icon'
+      }, {
+        type: 'druid-feral (tank)',
+        src: __webpack_require__(/*! ../../images/druid-feral-tank.png */ "./resources/images/druid-feral-tank.png"),
+        alt: 'feral-tank icon'
+      }, {
+        type: 'druid-feral (dps)',
+        src: __webpack_require__(/*! ../../images/druid-feral-dps.png */ "./resources/images/druid-feral-dps.png"),
+        alt: 'feral-dps icon'
+      }, {
+        type: 'druid-restoration',
+        src: __webpack_require__(/*! ../../images/druid-restoration.png */ "./resources/images/druid-restoration.png"),
+        alt: 'restoration icon'
+      }, {
+        type: 'priest',
+        src: __webpack_require__(/*! ../../images/priest.png */ "./resources/images/priest.png"),
+        alt: 'priest icon'
+      }, {
+        type: 'priest-discipline',
+        src: __webpack_require__(/*! ../../images/priest-discipline.png */ "./resources/images/priest-discipline.png"),
+        alt: 'discipline icon'
+      }, {
+        type: 'priest-holy',
+        src: __webpack_require__(/*! ../../images/priest-holy.png */ "./resources/images/priest-holy.png"),
+        alt: 'priest holy icon'
+      }, {
+        type: 'priest-shadow',
+        src: __webpack_require__(/*! ../../images/priest-shadow.png */ "./resources/images/priest-shadow.png"),
+        alt: 'priest shadow icon'
+      }, {
+        type: 'paladin',
+        src: __webpack_require__(/*! ../../images/paladin.png */ "./resources/images/paladin.png"),
+        alt: 'paladin icon'
+      }, {
+        type: 'paladin-holy',
+        src: __webpack_require__(/*! ../../images/paladin-holy.png */ "./resources/images/paladin-holy.png"),
+        alt: 'paladin holy icon'
+      }, {
+        type: 'paladin-protection',
+        src: __webpack_require__(/*! ../../images/paladin-protection.png */ "./resources/images/paladin-protection.png"),
+        alt: 'paladin protection icon'
+      }, {
+        type: 'paladin-retribution',
+        src: __webpack_require__(/*! ../../images/paladin-retribution.png */ "./resources/images/paladin-retribution.png"),
+        alt: 'paladin retribution icon'
+      }, {
+        type: 'shaman',
+        src: __webpack_require__(/*! ../../images/shaman.png */ "./resources/images/shaman.png"),
+        alt: 'shaman icon'
+      }, {
+        type: 'shaman-elemental',
+        src: __webpack_require__(/*! ../../images/shaman-elemental.png */ "./resources/images/shaman-elemental.png"),
+        alt: 'elemental icon'
+      }, {
+        type: 'shaman-enhancement',
+        src: __webpack_require__(/*! ../../images/shaman-enhancement.png */ "./resources/images/shaman-enhancement.png"),
+        alt: 'enhancement icon'
+      }, {
+        type: 'shaman-restoration',
+        src: __webpack_require__(/*! ../../images/shaman-restoration.png */ "./resources/images/shaman-restoration.png"),
+        alt: 'shaman restoration icon'
+      }, {
+        type: 'shaman-restoration',
+        src: __webpack_require__(/*! ../../images/shaman-restoration.png */ "./resources/images/shaman-restoration.png"),
+        alt: 'shaman restoration icon'
+      }, {
+        type: 'aqual-quintessence',
+        src: __webpack_require__(/*! ../../images/INV_Potion_76.png */ "./resources/images/INV_Potion_76.png"),
+        alt: 'aqual quintessence'
+      }]
+    };
+  },
+  computed: {
+    icon: function icon() {
+      var _this = this;
+
+      return this.icons.find(function (i) {
+        return i.type === _this.type.toLowerCase();
+      });
     }
   }
 });
@@ -6757,6 +7439,25 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 // module
 exports.push([module.i, ".modal-overlay[data-v-4b2d100a] {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background-color: rgba(0, 0, 0, 0.3);\n  opacity: 0;\n  display: none;\n  transition: 0.3s linear opacity;\n}\n.modal-overlay.show[data-v-4b2d100a] {\n  display: block;\n  opacity: 1;\n}\n.modal-main[data-v-4b2d100a] {\n  margin: 50px auto;\n  background: #ffffff;\n  width: 600px;\n  max-width: 100%;\n  padding: 15px;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SignupClassList.vue?vue&type=style&index=0&id=904ecd3a&scoped=true&lang=css&":
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/SignupClassList.vue?vue&type=style&index=0&id=904ecd3a&scoped=true&lang=css& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.player-name[data-v-904ecd3a] {\n  margin: 0 3px;\n}\n", ""]);
 
 // exports
 
@@ -20787,6 +21488,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SignupClassList.vue?vue&type=style&index=0&id=904ecd3a&scoped=true&lang=css&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/SignupClassList.vue?vue&type=style&index=0&id=904ecd3a&scoped=true&lang=css& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./SignupClassList.vue?vue&type=style&index=0&id=904ecd3a&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SignupClassList.vue?vue&type=style&index=0&id=904ecd3a&scoped=true&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/lib/addStyles.js":
 /*!****************************************************!*\
   !*** ./node_modules/style-loader/lib/addStyles.js ***!
@@ -21893,7 +22624,7 @@ var render = function() {
                     }
                   ],
                   staticClass: "form-control",
-                  attrs: { type: "text", id: "character-name" },
+                  attrs: { type: "text", id: "character-name", required: "" },
                   domProps: { value: _vm.signup.character_name },
                   on: {
                     input: function($event) {
@@ -21911,7 +22642,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form-group" }, [
-                _c("label", { attrs: { for: "class" } }, [_vm._v("Class:")]),
+                _c("label", { attrs: { for: "class" } }, [_vm._v("Class: *")]),
                 _vm._v(" "),
                 _c(
                   "select",
@@ -21957,7 +22688,7 @@ var render = function() {
               _vm._v(" "),
               _c("div", { staticClass: "form-group" }, [
                 _c("label", { attrs: { for: "spec" } }, [
-                  _vm._v("Specialisation:")
+                  _vm._v("Specialisation: *")
                 ]),
                 _vm._v(" "),
                 _c(
@@ -22005,7 +22736,7 @@ var render = function() {
               _vm.softReserves
                 ? _c("div", { staticClass: "form-group" }, [
                     _c("label", { attrs: { for: "spec" } }, [
-                      _vm._v("Soft reserve:")
+                      _vm._v("Soft reserve: *")
                     ]),
                     _vm._v(" "),
                     _c(
@@ -22199,6 +22930,432 @@ var staticRenderFns = [
     )
   }
 ]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RaidSignups.vue?vue&type=template&id=0ddfa9d6&scoped=true&":
+/*!**************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/RaidSignups.vue?vue&type=template&id=0ddfa9d6&scoped=true& ***!
+  \**************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "raid-signups" }, [
+    _c("div", { staticClass: "btn-group pb-4", attrs: { role: "group" } }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-primary",
+          attrs: { type: "button" },
+          on: {
+            click: function($event) {
+              _vm.view = "signups"
+            }
+          }
+        },
+        [_vm._v("\n      Signups\n    ")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-primary",
+          attrs: { type: "button" },
+          on: {
+            click: function($event) {
+              _vm.view = "soft_reserves"
+            }
+          }
+        },
+        [_vm._v("\n      Soft reserves\n    ")]
+      )
+    ]),
+    _vm._v(" "),
+    _vm.view === "signups"
+      ? _c("div", { staticClass: "signups-layout" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-12" }, [
+              _c("ul", { staticClass: "list-inline" }, [
+                _c("li", { staticClass: "list-inline-item" }, [
+                  _vm._v("Tanks " + _vm._s(_vm.tanks.length))
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "list-inline-item" }, [
+                  _vm._v("Healers " + _vm._s(_vm.healers.length))
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "list-inline-item" }, [
+                  _vm._v("Melee DPS " + _vm._s(_vm.meleeDps.length))
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "list-inline-item" }, [
+                  _vm._v("Ranged DPS " + _vm._s(_vm.rangedDps.length))
+                ]),
+                _vm._v(" "),
+                _vm.location === "Molten Core"
+                  ? _c("li", { staticClass: "list-inline-item" }, [
+                      _vm._v("Douses " + _vm._s(_vm.douses.length))
+                    ])
+                  : _vm._e()
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c(
+              "div",
+              { staticClass: "col-3" },
+              [
+                _c("signup-class-list-header", {
+                  attrs: { type: "warrior", count: _vm.warriors.length }
+                }),
+                _vm._v(" "),
+                _c("signup-class-list", {
+                  attrs: {
+                    type: "warrior",
+                    players: _vm.warriors,
+                    location: _vm.location
+                  }
+                })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-3" },
+              [
+                _c("signup-class-list-header", {
+                  attrs: { type: "rogue", count: _vm.rogues.length }
+                }),
+                _vm._v(" "),
+                _c("signup-class-list", {
+                  attrs: {
+                    type: "rogue",
+                    players: _vm.rogues,
+                    location: _vm.location
+                  }
+                })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-3" },
+              [
+                _c("signup-class-list-header", {
+                  attrs: { type: "mage", count: _vm.mages.length }
+                }),
+                _vm._v(" "),
+                _c("signup-class-list", {
+                  attrs: {
+                    type: "mage",
+                    players: _vm.mages,
+                    location: _vm.location
+                  }
+                })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-md-3" },
+              [
+                _c("signup-class-list-header", {
+                  attrs: { type: "hunter", count: _vm.hunters.length }
+                }),
+                _vm._v(" "),
+                _c("signup-class-list", {
+                  attrs: {
+                    type: "hunter",
+                    players: _vm.hunters,
+                    location: _vm.location
+                  }
+                })
+              ],
+              1
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c(
+              "div",
+              { staticClass: "col-3" },
+              [
+                _c("signup-class-list-header", {
+                  attrs: { type: "warlock", count: _vm.warlocks.length }
+                }),
+                _vm._v(" "),
+                _c("signup-class-list", {
+                  attrs: {
+                    type: "warlock",
+                    players: _vm.warlocks,
+                    location: _vm.location
+                  }
+                })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-3" },
+              [
+                _c("signup-class-list-header", {
+                  attrs: { type: "druid", count: _vm.druids.length }
+                }),
+                _vm._v(" "),
+                _c("signup-class-list", {
+                  attrs: {
+                    type: "druid",
+                    players: _vm.druids,
+                    location: _vm.location
+                  }
+                })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-3" },
+              [
+                _c("signup-class-list-header", {
+                  attrs: { type: "priest", count: _vm.priests.length }
+                }),
+                _vm._v(" "),
+                _c("signup-class-list", {
+                  attrs: {
+                    type: "priest",
+                    players: _vm.priests,
+                    location: _vm.location
+                  }
+                })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _vm.faction === "Alliance"
+              ? _c(
+                  "div",
+                  { staticClass: "col-md-3" },
+                  [
+                    _c("signup-class-list-header", {
+                      attrs: { type: "paladin", count: _vm.paladins.length }
+                    }),
+                    _vm._v(" "),
+                    _c("signup-class-list", {
+                      attrs: {
+                        type: "paladin",
+                        players: _vm.paladins,
+                        location: _vm.location
+                      }
+                    })
+                  ],
+                  1
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.faction === "Horde"
+              ? _c(
+                  "div",
+                  { staticClass: "col-md-3" },
+                  [
+                    _c("signup-class-list-header", {
+                      attrs: { type: "shaman", count: _vm.shamans.length }
+                    }),
+                    _vm._v(" "),
+                    _c("signup-class-list", {
+                      attrs: {
+                        type: "shaman",
+                        players: _vm.shamans,
+                        location: _vm.location
+                      }
+                    })
+                  ],
+                  1
+                )
+              : _vm._e()
+          ])
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.view === "soft_reserves"
+      ? _c("div", { staticClass: "soft-reserves-layout" }, [
+          _c(
+            "div",
+            { staticClass: "row" },
+            _vm._l(_vm.softReserves, function(players, item) {
+              return _c("div", { staticClass: "col-md-3" }, [
+                _c("h6", [_c("b", [_vm._v(_vm._s(item))])]),
+                _vm._v(" "),
+                _c(
+                  "ul",
+                  { staticClass: "list-unstyled" },
+                  [
+                    _c("signup-class-list", {
+                      attrs: {
+                        players: players,
+                        location: _vm.location,
+                        "class-icon": true
+                      }
+                    })
+                  ],
+                  1
+                )
+              ])
+            }),
+            0
+          )
+        ])
+      : _vm._e()
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SignupClassList.vue?vue&type=template&id=904ecd3a&scoped=true&":
+/*!******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/SignupClassList.vue?vue&type=template&id=904ecd3a&scoped=true& ***!
+  \******************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "ul",
+      { staticClass: "list-unstyled" },
+      _vm._l(_vm.players, function(player) {
+        return _c(
+          "li",
+          { key: player.id },
+          [
+            _vm.classIcon
+              ? _c("wow-icon", { attrs: { type: player.class, size: 15 } })
+              : _vm._e(),
+            _vm._v(" "),
+            _c("wow-icon", {
+              attrs: { type: player.class + "-" + player.spec, size: 15 }
+            }),
+            _vm._v(" "),
+            _c(
+              "span",
+              {
+                staticClass: "player-name",
+                class: [player.confirmed ? "text-success" : "text-danger"]
+              },
+              [
+                _vm._v(
+                  "\n        " + _vm._s(player.character_name) + "\n      "
+                )
+              ]
+            ),
+            _vm._v(" "),
+            player.douse && _vm.location === "Molten Core"
+              ? _c("wow-icon", {
+                  attrs: { type: "aqual-quintessence", size: 15 }
+                })
+              : _vm._e()
+          ],
+          1
+        )
+      }),
+      0
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SignupClassListHeader.vue?vue&type=template&id=49247560&scoped=true&":
+/*!************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/SignupClassListHeader.vue?vue&type=template&id=49247560&scoped=true& ***!
+  \************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "h6",
+    { class: _vm.style.text },
+    [
+      _c("wow-icon", { attrs: { type: _vm.type } }),
+      _vm._v(" "),
+      _c("b", { staticStyle: { "margin-left": "3px" } }, [
+        _vm._v(_vm._s(_vm.style.label) + " (" + _vm._s(_vm.count) + ")")
+      ])
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/WowIcon.vue?vue&type=template&id=855ab9c6&scoped=true&":
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/WowIcon.vue?vue&type=template&id=855ab9c6&scoped=true& ***!
+  \**********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("img", {
+    attrs: {
+      src: _vm.icon.src,
+      alt: _vm.icon.alt,
+      height: _vm.size,
+      width: _vm.size
+    }
+  })
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -34329,6 +35486,424 @@ module.exports = g;
 
 /***/ }),
 
+/***/ "./resources/images/INV_Potion_76.png":
+/*!********************************************!*\
+  !*** ./resources/images/INV_Potion_76.png ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/INV_Potion_76.png?e68533316bfc438f4c6bf69902baeb03";
+
+/***/ }),
+
+/***/ "./resources/images/druid-balance.png":
+/*!********************************************!*\
+  !*** ./resources/images/druid-balance.png ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/druid-balance.png?f2dabff3f5f9425ae1051d35ac75a30c";
+
+/***/ }),
+
+/***/ "./resources/images/druid-feral-dps.png":
+/*!**********************************************!*\
+  !*** ./resources/images/druid-feral-dps.png ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/druid-feral-dps.png?a9a1fcd767938eb12bbf81487eea535d";
+
+/***/ }),
+
+/***/ "./resources/images/druid-feral-tank.png":
+/*!***********************************************!*\
+  !*** ./resources/images/druid-feral-tank.png ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/druid-feral-tank.png?39fd75eeb9eb99eaabbfae061e15266f";
+
+/***/ }),
+
+/***/ "./resources/images/druid-restoration.png":
+/*!************************************************!*\
+  !*** ./resources/images/druid-restoration.png ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/druid-restoration.png?29b66d5bd68d4287844fb9ee8b6c5a2e";
+
+/***/ }),
+
+/***/ "./resources/images/druid.png":
+/*!************************************!*\
+  !*** ./resources/images/druid.png ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/druid.png?7316e8b7e6144dbe49fcd757c5f78c7f";
+
+/***/ }),
+
+/***/ "./resources/images/hunter-beast-mastery.png":
+/*!***************************************************!*\
+  !*** ./resources/images/hunter-beast-mastery.png ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/hunter-beast-mastery.png?9124edb79b9e676765922a610778b9f0";
+
+/***/ }),
+
+/***/ "./resources/images/hunter-marksmanship.png":
+/*!**************************************************!*\
+  !*** ./resources/images/hunter-marksmanship.png ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/hunter-marksmanship.png?d5e0e8e3329fd9e94dafec2d7cb53bd7";
+
+/***/ }),
+
+/***/ "./resources/images/hunter-survival.png":
+/*!**********************************************!*\
+  !*** ./resources/images/hunter-survival.png ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/hunter-survival.png?7800eb2035884a9ee1d89185fa3bc334";
+
+/***/ }),
+
+/***/ "./resources/images/hunter.png":
+/*!*************************************!*\
+  !*** ./resources/images/hunter.png ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/hunter.png?0154372e5fa84e26d5ff3669f484acbc";
+
+/***/ }),
+
+/***/ "./resources/images/mage-arcane.png":
+/*!******************************************!*\
+  !*** ./resources/images/mage-arcane.png ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/mage-arcane.png?30f4e83f7c566506e32b465c00b6248a";
+
+/***/ }),
+
+/***/ "./resources/images/mage-fire.png":
+/*!****************************************!*\
+  !*** ./resources/images/mage-fire.png ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/mage-fire.png?8e1e1d1c2a2ad41ffa89f83051cb53d1";
+
+/***/ }),
+
+/***/ "./resources/images/mage-frost.png":
+/*!*****************************************!*\
+  !*** ./resources/images/mage-frost.png ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/mage-frost.png?02879ac329f8d7296e1f8b6ba2c8c32f";
+
+/***/ }),
+
+/***/ "./resources/images/mage.png":
+/*!***********************************!*\
+  !*** ./resources/images/mage.png ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/mage.png?34b60b18fdd4322796fc55fd3b0cb11e";
+
+/***/ }),
+
+/***/ "./resources/images/paladin-holy.png":
+/*!*******************************************!*\
+  !*** ./resources/images/paladin-holy.png ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/paladin-holy.png?a0b6fbe14e09e4ffaf0cc0c199ac7748";
+
+/***/ }),
+
+/***/ "./resources/images/paladin-protection.png":
+/*!*************************************************!*\
+  !*** ./resources/images/paladin-protection.png ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/paladin-protection.png?6574a1d3b9f2471eaca7ba7256f454e6";
+
+/***/ }),
+
+/***/ "./resources/images/paladin-retribution.png":
+/*!**************************************************!*\
+  !*** ./resources/images/paladin-retribution.png ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/paladin-retribution.png?488ef9ab21e570bde33dd2617ab7b360";
+
+/***/ }),
+
+/***/ "./resources/images/paladin.png":
+/*!**************************************!*\
+  !*** ./resources/images/paladin.png ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/paladin.png?8c900e115071798f10f1b019641b23b9";
+
+/***/ }),
+
+/***/ "./resources/images/priest-discipline.png":
+/*!************************************************!*\
+  !*** ./resources/images/priest-discipline.png ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/priest-discipline.png?5cd331b224db22a052639edb1d7c0bb4";
+
+/***/ }),
+
+/***/ "./resources/images/priest-holy.png":
+/*!******************************************!*\
+  !*** ./resources/images/priest-holy.png ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/priest-holy.png?a0b6fbe14e09e4ffaf0cc0c199ac7748";
+
+/***/ }),
+
+/***/ "./resources/images/priest-shadow.png":
+/*!********************************************!*\
+  !*** ./resources/images/priest-shadow.png ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/priest-shadow.png?43730beac1a27998504911a42fb2687a";
+
+/***/ }),
+
+/***/ "./resources/images/priest.png":
+/*!*************************************!*\
+  !*** ./resources/images/priest.png ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/priest.png?c5723fee35a63b3e118b49123e7ffa9e";
+
+/***/ }),
+
+/***/ "./resources/images/rogue-assassination.png":
+/*!**************************************************!*\
+  !*** ./resources/images/rogue-assassination.png ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/rogue-assassination.png?2e031328c088b1ac2e7304cec56f736c";
+
+/***/ }),
+
+/***/ "./resources/images/rogue-combat.png":
+/*!*******************************************!*\
+  !*** ./resources/images/rogue-combat.png ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/rogue-combat.png?5874404416ab7e2906ba76ba9a82355b";
+
+/***/ }),
+
+/***/ "./resources/images/rogue-subtlety.png":
+/*!*********************************************!*\
+  !*** ./resources/images/rogue-subtlety.png ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/rogue-subtlety.png?8e86318d7dadccfc3e0957bc796e1e5d";
+
+/***/ }),
+
+/***/ "./resources/images/rogue.png":
+/*!************************************!*\
+  !*** ./resources/images/rogue.png ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/rogue.png?cf11070078ec0ada461c96c047ab3660";
+
+/***/ }),
+
+/***/ "./resources/images/shaman-elemental.png":
+/*!***********************************************!*\
+  !*** ./resources/images/shaman-elemental.png ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/shaman-elemental.png?46bc9fd80d23d5b6f0a6720ff4f074f1";
+
+/***/ }),
+
+/***/ "./resources/images/shaman-enhancement.png":
+/*!*************************************************!*\
+  !*** ./resources/images/shaman-enhancement.png ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/shaman-enhancement.png?b0cbde99d398280ea857628f01121645";
+
+/***/ }),
+
+/***/ "./resources/images/shaman-restoration.png":
+/*!*************************************************!*\
+  !*** ./resources/images/shaman-restoration.png ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/shaman-restoration.png?d68e25ca577f3709c4862a61f42c953e";
+
+/***/ }),
+
+/***/ "./resources/images/shaman.png":
+/*!*************************************!*\
+  !*** ./resources/images/shaman.png ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/shaman.png?8996dbfd0a3b451b6ab3e29af9378a11";
+
+/***/ }),
+
+/***/ "./resources/images/warlock-affliction.png":
+/*!*************************************************!*\
+  !*** ./resources/images/warlock-affliction.png ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/warlock-affliction.png?c8c8eb90b6065afb9037a5916d794045";
+
+/***/ }),
+
+/***/ "./resources/images/warlock-demonology.png":
+/*!*************************************************!*\
+  !*** ./resources/images/warlock-demonology.png ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/warlock-demonology.png?1cc309cc84519ee67b70c5f6b975e4fc";
+
+/***/ }),
+
+/***/ "./resources/images/warlock-destruction.png":
+/*!**************************************************!*\
+  !*** ./resources/images/warlock-destruction.png ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/warlock-destruction.png?3ca3d44e6d9363ef2af685301ab068b1";
+
+/***/ }),
+
+/***/ "./resources/images/warlock.png":
+/*!**************************************!*\
+  !*** ./resources/images/warlock.png ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/warlock.png?1de1c48b12f4cbb7605e2a7fab1f8afb";
+
+/***/ }),
+
+/***/ "./resources/images/warrior-arms.png":
+/*!*******************************************!*\
+  !*** ./resources/images/warrior-arms.png ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/warrior-arms.png?b542adf9f82b15e8d239e911eae1bc8e";
+
+/***/ }),
+
+/***/ "./resources/images/warrior-fury.png":
+/*!*******************************************!*\
+  !*** ./resources/images/warrior-fury.png ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/warrior-fury.png?17908d5a67b9e8499f565373eb7cbb23";
+
+/***/ }),
+
+/***/ "./resources/images/warrior-protection.png":
+/*!*************************************************!*\
+  !*** ./resources/images/warrior-protection.png ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/warrior-protection.png?5219b924bacbb29b31d03563ceae8a3b";
+
+/***/ }),
+
+/***/ "./resources/images/warrior.png":
+/*!**************************************!*\
+  !*** ./resources/images/warrior.png ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/warrior.png?541304dbd4bdb60cd9b1f45321c28b03";
+
+/***/ }),
+
 /***/ "./resources/js sync recursive \\.vue$/":
 /*!***********************************!*\
   !*** ./resources/js sync \.vue$/ ***!
@@ -34339,7 +35914,11 @@ module.exports = g;
 var map = {
 	"./components/CreateRaidModal.vue": "./resources/js/components/CreateRaidModal.vue",
 	"./components/ModalComponent.vue": "./resources/js/components/ModalComponent.vue",
-	"./components/RaidSignupModal.vue": "./resources/js/components/RaidSignupModal.vue"
+	"./components/RaidSignupModal.vue": "./resources/js/components/RaidSignupModal.vue",
+	"./components/RaidSignups.vue": "./resources/js/components/RaidSignups.vue",
+	"./components/SignupClassList.vue": "./resources/js/components/SignupClassList.vue",
+	"./components/SignupClassListHeader.vue": "./resources/js/components/SignupClassListHeader.vue",
+	"./components/WowIcon.vue": "./resources/js/components/WowIcon.vue"
 };
 
 
@@ -34614,6 +36193,300 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RaidSignupModal_vue_vue_type_template_id_38520d20_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RaidSignupModal_vue_vue_type_template_id_38520d20_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/RaidSignups.vue":
+/*!*************************************************!*\
+  !*** ./resources/js/components/RaidSignups.vue ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _RaidSignups_vue_vue_type_template_id_0ddfa9d6_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./RaidSignups.vue?vue&type=template&id=0ddfa9d6&scoped=true& */ "./resources/js/components/RaidSignups.vue?vue&type=template&id=0ddfa9d6&scoped=true&");
+/* harmony import */ var _RaidSignups_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RaidSignups.vue?vue&type=script&lang=js& */ "./resources/js/components/RaidSignups.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _RaidSignups_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _RaidSignups_vue_vue_type_template_id_0ddfa9d6_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _RaidSignups_vue_vue_type_template_id_0ddfa9d6_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "0ddfa9d6",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/RaidSignups.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/RaidSignups.vue?vue&type=script&lang=js&":
+/*!**************************************************************************!*\
+  !*** ./resources/js/components/RaidSignups.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RaidSignups_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./RaidSignups.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RaidSignups.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RaidSignups_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/RaidSignups.vue?vue&type=template&id=0ddfa9d6&scoped=true&":
+/*!********************************************************************************************!*\
+  !*** ./resources/js/components/RaidSignups.vue?vue&type=template&id=0ddfa9d6&scoped=true& ***!
+  \********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RaidSignups_vue_vue_type_template_id_0ddfa9d6_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./RaidSignups.vue?vue&type=template&id=0ddfa9d6&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/RaidSignups.vue?vue&type=template&id=0ddfa9d6&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RaidSignups_vue_vue_type_template_id_0ddfa9d6_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RaidSignups_vue_vue_type_template_id_0ddfa9d6_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/SignupClassList.vue":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/SignupClassList.vue ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _SignupClassList_vue_vue_type_template_id_904ecd3a_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SignupClassList.vue?vue&type=template&id=904ecd3a&scoped=true& */ "./resources/js/components/SignupClassList.vue?vue&type=template&id=904ecd3a&scoped=true&");
+/* harmony import */ var _SignupClassList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SignupClassList.vue?vue&type=script&lang=js& */ "./resources/js/components/SignupClassList.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _SignupClassList_vue_vue_type_style_index_0_id_904ecd3a_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SignupClassList.vue?vue&type=style&index=0&id=904ecd3a&scoped=true&lang=css& */ "./resources/js/components/SignupClassList.vue?vue&type=style&index=0&id=904ecd3a&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _SignupClassList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _SignupClassList_vue_vue_type_template_id_904ecd3a_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _SignupClassList_vue_vue_type_template_id_904ecd3a_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "904ecd3a",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/SignupClassList.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/SignupClassList.vue?vue&type=script&lang=js&":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/SignupClassList.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SignupClassList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./SignupClassList.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SignupClassList.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SignupClassList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/SignupClassList.vue?vue&type=style&index=0&id=904ecd3a&scoped=true&lang=css&":
+/*!**************************************************************************************************************!*\
+  !*** ./resources/js/components/SignupClassList.vue?vue&type=style&index=0&id=904ecd3a&scoped=true&lang=css& ***!
+  \**************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SignupClassList_vue_vue_type_style_index_0_id_904ecd3a_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./SignupClassList.vue?vue&type=style&index=0&id=904ecd3a&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SignupClassList.vue?vue&type=style&index=0&id=904ecd3a&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SignupClassList_vue_vue_type_style_index_0_id_904ecd3a_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SignupClassList_vue_vue_type_style_index_0_id_904ecd3a_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SignupClassList_vue_vue_type_style_index_0_id_904ecd3a_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SignupClassList_vue_vue_type_style_index_0_id_904ecd3a_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SignupClassList_vue_vue_type_style_index_0_id_904ecd3a_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/components/SignupClassList.vue?vue&type=template&id=904ecd3a&scoped=true&":
+/*!************************************************************************************************!*\
+  !*** ./resources/js/components/SignupClassList.vue?vue&type=template&id=904ecd3a&scoped=true& ***!
+  \************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SignupClassList_vue_vue_type_template_id_904ecd3a_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./SignupClassList.vue?vue&type=template&id=904ecd3a&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SignupClassList.vue?vue&type=template&id=904ecd3a&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SignupClassList_vue_vue_type_template_id_904ecd3a_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SignupClassList_vue_vue_type_template_id_904ecd3a_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/SignupClassListHeader.vue":
+/*!***********************************************************!*\
+  !*** ./resources/js/components/SignupClassListHeader.vue ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _SignupClassListHeader_vue_vue_type_template_id_49247560_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SignupClassListHeader.vue?vue&type=template&id=49247560&scoped=true& */ "./resources/js/components/SignupClassListHeader.vue?vue&type=template&id=49247560&scoped=true&");
+/* harmony import */ var _SignupClassListHeader_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SignupClassListHeader.vue?vue&type=script&lang=js& */ "./resources/js/components/SignupClassListHeader.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _SignupClassListHeader_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _SignupClassListHeader_vue_vue_type_template_id_49247560_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _SignupClassListHeader_vue_vue_type_template_id_49247560_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "49247560",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/SignupClassListHeader.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/SignupClassListHeader.vue?vue&type=script&lang=js&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/components/SignupClassListHeader.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SignupClassListHeader_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./SignupClassListHeader.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SignupClassListHeader.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SignupClassListHeader_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/SignupClassListHeader.vue?vue&type=template&id=49247560&scoped=true&":
+/*!******************************************************************************************************!*\
+  !*** ./resources/js/components/SignupClassListHeader.vue?vue&type=template&id=49247560&scoped=true& ***!
+  \******************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SignupClassListHeader_vue_vue_type_template_id_49247560_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./SignupClassListHeader.vue?vue&type=template&id=49247560&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SignupClassListHeader.vue?vue&type=template&id=49247560&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SignupClassListHeader_vue_vue_type_template_id_49247560_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SignupClassListHeader_vue_vue_type_template_id_49247560_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/WowIcon.vue":
+/*!*********************************************!*\
+  !*** ./resources/js/components/WowIcon.vue ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _WowIcon_vue_vue_type_template_id_855ab9c6_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./WowIcon.vue?vue&type=template&id=855ab9c6&scoped=true& */ "./resources/js/components/WowIcon.vue?vue&type=template&id=855ab9c6&scoped=true&");
+/* harmony import */ var _WowIcon_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./WowIcon.vue?vue&type=script&lang=js& */ "./resources/js/components/WowIcon.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _WowIcon_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _WowIcon_vue_vue_type_template_id_855ab9c6_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _WowIcon_vue_vue_type_template_id_855ab9c6_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "855ab9c6",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/WowIcon.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/WowIcon.vue?vue&type=script&lang=js&":
+/*!**********************************************************************!*\
+  !*** ./resources/js/components/WowIcon.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_WowIcon_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./WowIcon.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/WowIcon.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_WowIcon_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/WowIcon.vue?vue&type=template&id=855ab9c6&scoped=true&":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/components/WowIcon.vue?vue&type=template&id=855ab9c6&scoped=true& ***!
+  \****************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_WowIcon_vue_vue_type_template_id_855ab9c6_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./WowIcon.vue?vue&type=template&id=855ab9c6&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/WowIcon.vue?vue&type=template&id=855ab9c6&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_WowIcon_vue_vue_type_template_id_855ab9c6_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_WowIcon_vue_vue_type_template_id_855ab9c6_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
