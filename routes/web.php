@@ -26,5 +26,6 @@ Route::post('/raids/{raid}/signup', 'RaidSignupController@store')->name('raids.s
 Route::middleware(['auth'])->group(function () {
     Route::get('/raids', 'RaidController@index')->name('raids.index');
     Route::post('/raids/create', 'RaidController@store')->name('raids.create');
+    Route::put('/raids/{raid}/update', 'RaidController@update')->name('raids.update');
+    Route::delete('/raids/{raid}/delete', 'RaidController@destroy')->name('raids.delete');
 });
-

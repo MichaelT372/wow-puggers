@@ -35,6 +35,12 @@
  * Date: 2020-04-10T15:07Z
  */
 
+/**
+ * vuex v3.3.0
+ * (c) 2020 Evan You
+ * @license MIT
+ */
+
 /**!
  * @fileOverview Kickass library to create and place poppers near their reference elements.
  * @version 1.16.1

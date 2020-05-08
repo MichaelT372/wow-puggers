@@ -214,6 +214,16 @@
             type: 'aqual-quintessence',
             src: require('../../images/INV_Potion_76.png'),
             alt: 'aqual quintessence'
+          },
+          {
+            type: 'alliance',
+            src: require('../../images/alliance.png'),
+            alt: 'alliance'
+          },
+          {
+            type: 'horde',
+            src: require('../../images/horde.png'),
+            alt: 'horde'
           }
         ]
       }

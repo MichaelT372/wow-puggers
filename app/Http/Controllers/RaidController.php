@@ -3,38 +3,37 @@
 namespace App\Http\Controllers;
 
 use App\Raid;
+use Exception;
+use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\View\View;
 
 class RaidController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Factory|View
      */
     public function index()
     {
-        $raids = Auth::user()->raids()->simplePaginate(10, ['*'], 'myRaids');
+        $raids = Auth::user()
+                    ->raids()
+                    ->withCount('raiders')
+                    ->latest()
+                    ->get();
 
         return view('raids.index', compact('raids'));
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\JsonResponse
+     * @param  Request  $request
+     * @return JsonResponse
      */
     public function store(Request $request)
     {
@@ -52,60 +51,78 @@ class RaidController extends Controller
 
         Auth::user()->raids()->save($raid);
 
+        $raid->loadCount('raiders');
+
         return response()->json([
             'status' => 'success',
-            'data' => [
-                'id' => $raid->id
-            ]
+            'raid' => $raid
         ]);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Raid  $raid
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @param  Raid  $raid
+     * @return Factory|View
      */
     public function show(Raid $raid)
     {
-        $raid->load(['raiders' => function ($query) {
-            $query->select(['id', 'character_name', 'class', 'spec', 'soft_reserve', 'douse', 'confirmed', 'raid_id']);
-        }]);
+        $raid->load('raiders');
 
         return view('raids.show', compact('raid'));
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Raid  $raid
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Raid $raid)
-    {
-        //
-    }
-
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Raid  $raid
-     * @return \Illuminate\Http\Response
+     * @param  Request  $request
+     * @param  Raid  $raid
+     * @return JsonResponse
+     * @throws AuthorizationException
      */
     public function update(Request $request, Raid $raid)
     {
-        //
+        $this->authorize('update', $raid);
+
+        $data = $request->validate([
+            'description' => 'required',
+            'faction' => 'required|in:Horde,Alliance',
+            'location' => 'required',
+            'soft_reserves' => 'boolean',
+            'start_at' => 'required|date'
+        ]);
+
+        $raid->update($data);
+        $raid->loadCount('raiders');
+
+        return response()->json([
+            'status' => 'success',
+            'raid' => $raid
+        ]);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Raid  $raid
-     * @return \Illuminate\Http\Response
+     * @param  Raid  $raid
+     * @return JsonResponse
+     * @throws AuthorizationException
      */
     public function destroy(Raid $raid)
     {
-        //
+        $this->authorize('delete', $raid);
+
+        try {
+            $raid->delete();
+        } catch (Exception $e) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Could not find this raid, it was probably already deleted'
+            ], 400);
+        }
+
+        return response()->json([
+            'status' => 'OK',
+            'message' => 'raid deleted'
+        ]);
     }
 }

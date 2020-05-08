@@ -9,12 +9,16 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Raid extends Model
 {
-    protected $guarded = ['loot_rules', 'open', 'leader_id'];
-
-    protected $dates = ['starts_at'];
+    protected $guarded = [
+        'loot_rules', 'open', 'leader_id'
+    ];
 
     protected $casts = [
-        'soft_reserves' => 'boolean'
+        'soft_reserves' => 'boolean',
+    ];
+
+    protected $dates = [
+        'start_at'
     ];
 
     protected $with = ['leader'];
