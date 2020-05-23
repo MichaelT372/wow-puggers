@@ -7,6 +7,7 @@ try {
 window.moment = require('moment');
 window.axios = require('axios');
 window.Vue = require('vue');
+import items from './data/items';
 import store from './store'
 window.$store = store;
 
@@ -17,5 +18,8 @@ files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(
 
 const app = new Vue({
   el: '#app',
-  store
+  store,
+  created() {
+    this.$store.commit('setItems', items);
+  }
 });

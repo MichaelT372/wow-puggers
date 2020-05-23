@@ -224,6 +224,26 @@
             type: 'horde',
             src: require('../../images/horde.png'),
             alt: 'horde'
+          },
+          {
+            type: 'tank',
+            src: require('../../images/tank.png'),
+            alt: 'tank'
+          },
+          {
+            type: 'melee',
+            src: require('../../images/melee.png'),
+            alt: 'melee'
+          },
+          {
+            type: 'ranged',
+            src: require('../../images/ranged.png'),
+            alt: 'ranged'
+          },
+          {
+            type: 'healer',
+            src: require('../../images/healer.png'),
+            alt: 'healer'
           }
         ]
       }

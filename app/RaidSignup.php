@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class RaidSignup extends Model
 {
-    protected $guarded = ['confirmed'];
+    protected $guarded = ['note'];
 
     public function raid()
     {
-        return $this->hasOne(Raid::class);
+        return $this->belongsTo(Raid::class);
     }
 }

@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PageController@home')->name('home');
 
 Auth::routes();
 
@@ -28,4 +26,6 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/raids/create', 'RaidController@store')->name('raids.create');
     Route::put('/raids/{raid}/update', 'RaidController@update')->name('raids.update');
     Route::delete('/raids/{raid}/delete', 'RaidController@destroy')->name('raids.delete');
+    Route::put('/raider/{raidSignup}', 'RaidSignupController@update')->name('raider.update');
+    Route::delete('/raider/{raidSignup}', 'RaidSignupController@destroy')->name('raider.delete');
 });

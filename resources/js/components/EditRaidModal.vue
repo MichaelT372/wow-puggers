@@ -126,7 +126,6 @@
         this.$store.commit('showEditRaidModal', false);
       },
       submit() {
-        console.log(this.raidData);
         const isValid = this.$refs.form.reportValidity();
         if (isValid) {
           this.submitting = true;

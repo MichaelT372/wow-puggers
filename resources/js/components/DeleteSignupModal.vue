@@ -1,20 +1,20 @@
 <template>
   <modal-component
-    :show="showDeleteModal"
+    :show="show"
     @dismiss="cancelDelete"
   >
     <div class="delete-raid">
       <div class="container">
         <div class="row mb-2">
           <div class="col">
-            <h3>Are you sure you want to delete this raid?</h3>
+            <h3>Are you sure you want to delete {{ signup.character_name }} from this raid?</h3>
           </div>
         </div>
         <div class="row">
           <div class="col">
             <button
               class="btn btn-danger"
-              @click="deleteRaid"
+              @click="deleteSignup"
               :disabled="submitting"
             >
               <span v-if="submitting">
@@ -38,27 +38,30 @@
 
 <script>
   export default {
-    name: "DeleteRaidModal",
+    name: "DeleteSignupModal",
     data() {
       return {
         submitting: false
       }
     },
     computed: {
-      showDeleteModal() {
-        return this.$store.state.showDeleteRaidModal;
+      show() {
+        return this.$store.state.showDeleteSignupModal;
       },
+      signup() {
+        return this.$store.state.signupToDelete;
+      }
     },
     methods: {
-      deleteRaid() {
+      deleteSignup() {
         this.submitting = true;
-        this.$store.dispatch('deleteRaid').then(() => {
+        this.$store.dispatch('deleteRaider').then(() => {
           this.submitting = false;
         });
       },
       cancelDelete() {
-        this.$store.commit('showDeleteRaidModal', false);
-        this.$store.commit('setRaidToDelete', null);
+        this.$store.commit('showDeleteSignupModal', false);
+        this.$store.commit('setSignupToDelete', {});
       }
     }
   }

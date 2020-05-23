@@ -23,17 +23,34 @@ export default new Vuex.Store({
     healerSpecs: ['Holy', 'Restoration', 'Discipline'],
     meleeDpsSpecs: ['Arms', 'Fury', 'Enhancement', 'Retribution', 'Assassination', 'Combat', 'Subtlety', 'Feral (DPS)'],
     rangedDpsSpecs: ['Arcane', 'Fire', 'Frost', 'Survival', 'Beast Mastery', 'Marksmanship', 'Affliction', 'Demonology', 'Destruction', 'Shadow', 'Balance'],
+    items: [],
     raids: [],
     raid: {},
     signups: [],
+    canEdit: false,
     showCreateRaidModal: false,
     showEditRaidModal: false,
     showDeleteRaidModal: false,
     raidToDelete: null,
-    raidToEdit: {}
+    raidToEdit: {},
+    showCreateSignupModal: false,
+    showEditSignupModal: false,
+    showDeleteSignupModal: false,
+    signupToEdit: {},
+    signupToDelete: {}
   },
 
   mutations: {
+    canEdit(state, status) {
+      state.canEdit = !!status;
+    },
+    setItems(state, items) {
+      let allItems = [];
+      for (let raid in items) {
+        allItems.push(...items[raid]);
+      }
+      state.items = allItems;
+    },
     setRaids(state, raids) {
       state.raids = raids;
     },
@@ -72,7 +89,32 @@ export default new Vuex.Store({
       state.signups = signups.filter(s => {
         return state.raid.faction === 'Horde' ? s.class !== 'Paladin' : s.class !== 'Shaman';
       }).sort((a, b) => b.confirmed - a.confirmed);
-    }
+    },
+    addSignup(state, signup) {
+      state.signups.push(signup);
+    },
+    updateSignup(state, signup) {
+      const i = state.signups.findIndex(s => s.id === signup.id);
+      Vue.set(state.signups, i, signup);
+    },
+    deleteSignup(state, signupId) {
+      state.signups = state.signups.filter(s => s.id !== signupId);
+    },
+    setSignupToEdit(state, player) {
+      state.signupToEdit = player;
+    },
+    setSignupToDelete(state, player) {
+      state.signupToDelete = player;
+    },
+    showCreateSignupModal(state, status) {
+      state.showCreateSignupModal = status;
+    },
+    showEditSignupModal(state, status) {
+      state.showEditSignupModal = status;
+    },
+    showDeleteSignupModal(state, status) {
+      state.showDeleteSignupModal = status;
+    },
   },
 
   actions: {
@@ -107,7 +149,38 @@ export default new Vuex.Store({
           commit('showDeleteRaidModal', false);
           commit('setRaidToDelete', null);
         });
-    }
+    },
+    createRaider({commit, state}, signup) {
+      return axios.post(`/raids/${state.raid.id}/signup`, signup)
+        .then(({data}) => {
+          commit('addSignup', data.signup);
+          commit('showCreateSignupModal', false);
+        })
+        .catch(err => {
+          return err;
+        });
+    },
+    updateRaider({commit, state}, raider) {
+      return axios.put(`/raider/${raider.id}`, raider)
+        .then(({data}) => {
+          commit('updateSignup', data.signup);
+          commit('setSignups', state.signups);
+        })
+        .catch(err => {
+          return err;
+        });
+    },
+    deleteRaider({commit, state}) {
+      return axios.delete(`/raider/${state.signupToDelete.id}`)
+        .then(() => {
+          commit('deleteSignup', state.signupToDelete.id);
+          commit('showDeleteSignupModal', false);
+          commit('setSignupToDelete', {});
+        })
+        .catch((err) => {
+          return err;
+        });
+    },
   },
 
   getters: {
@@ -127,6 +200,14 @@ export default new Vuex.Store({
     },
     signupsBySoftReserve: state => {
       return groupBy(state.signups, 'soft_reserve');
-    }
+    },
+    getItemId: state => (name) => {
+      const item = state.items.find(i => i['item_name'].toLowerCase() === name.toLowerCase());
+      return item.item_id || null;
+    },
+    getItemLink: state => (name) => {
+      const item = state.items.find(i => i['item_name'].toLowerCase() === name.toLowerCase());
+      return 'https://classic.wowhead.com/item='+item.item_id;
+    },
   }
 })

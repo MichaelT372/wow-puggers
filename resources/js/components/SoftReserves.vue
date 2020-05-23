@@ -1,7 +1,7 @@
 <template>
   <div class="soft-reserves-layout">
     <div class="form-group" style="width: 300px;">
-      <label for="filter">Filter Item</label>
+      <label for="filter">Filter Items</label>
       <input id="filter" type="text" class="form-control" v-model="filter">
     </div>
 
@@ -10,23 +10,29 @@
         Item Name
       </div>
       <div class="players-col">
-          Players
+        Players
       </div>
     </div>
-    <div class="soft-reserve-row" v-for="item in softReservesKeys" :key="item">
+    <div class="soft-reserve-row" v-for="(item, index) in softReserveItemNames" :key="index">
       <div class="item-col">
-        <span>{{ item }}</span>
+        <span>
+          <a
+            class="text-white"
+            :href="getItemLink(item)"
+            target="_blank"
+          >{{ item }}</a>
+        </span>
       </div>
       <div class="players-col">
-        <div class="player" v-for="player in signupsBySoftReserve[item]">
+        <div class="player" v-for="player in signupsBySoftReserve[item]" :key="player.id">
           <wow-icon
             :type="player.class"
-            :size="15"
+            :size="20"
           ></wow-icon>
 
           <wow-icon
             :type="`${player.class}-${player.spec}`"
-            :size="15"
+            :size="20"
           ></wow-icon>
 
           <span
@@ -67,15 +73,20 @@
       }),
       ...mapGetters({
         signupsBySoftReserve: 'signupsBySoftReserve',
+        getItemId: 'getItemId',
+        getItemLink: 'getItemLink'
       }),
       showDouse() {
         return this.raid.location === 'Molten Core';
       },
-      softReservesKeys() {
+      softReserveItemNames() {
         return Object.keys(this.signupsBySoftReserve)
           .sort()
-          .filter(k => k.toLowerCase().trim().includes(this.filter.toLowerCase().trim()));
-      }
+          .filter(k => {
+            return k !== 'null'
+              && k.toLowerCase().trim().includes(this.filter.toLowerCase().trim());
+          });
+      },
     },
   }
 </script>
@@ -102,7 +113,6 @@
   .soft-reserve-row--header {
     font-weight: bold;
     font-size: 18px;
-    cursor: pointer;
   }
 
   .soft-reserve-row:nth-of-type(odd) {
@@ -130,6 +140,7 @@
     padding: 5px 12px;
     border-radius: 3px;
     margin: 0 8px 0 0;
+    border: 1px solid rgba(0, 0, 0, 0.7);
     background-color: rgba(0,0,0,0.5);
   }
 

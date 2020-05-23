@@ -4,7 +4,7 @@
       @enter="enter"
       @leave="leave"
     >
-      <div class="col-4 mb-4 raid-card-col"
+      <div class="col-lg-4 col-md-6 col-12 mb-4 raid-card-col"
            v-if="raids.length > 0"
            v-for="(raid, index) in raids"
            :key="raid.id"
@@ -117,7 +117,7 @@
   }
 
   .raid-card-col {
-    transition: all .25s linear;
+    transition: opacity .25s linear;
   }
 
   .raid-card {
@@ -150,13 +150,18 @@
       width: 18px;
       transition: 0.1s linear;
     }
-    svg:hover {
-      fill: #000;
-    }
+  }
+
+  .edit-icon svg:hover {
+    fill: #17a2b8;
+  }
+
+  .delete-icon svg:hover {
+    fill: #e3342f;
   }
 
   .raid-card-text {
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0,0,0,0.8);
     padding: 13px 10px 10px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;

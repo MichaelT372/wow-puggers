@@ -1,8 +1,114 @@
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-
-// Variables
 @import 'variables';
-
-// Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  padding-top: 70px;
+}
+
+.navbar-brand img {
+  height: 45px;
+  width: auto;
+}
+
+.intro {
+  background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(/images/onyxia.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 100px 0;
+}
+
+.body-bg {
+  background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(/images/onyxia.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.molten-core,
+.other {
+  background-size: cover;
+  background-image: url(/images/molten-core.jpg);
+  background-position: center bottom -100px;
+}
+
+.blackwing-lair {
+  background-size: cover;
+  background-image: url(/images/blackwing-lair.jpg);
+  background-position: center;
+}
+
+.zulgurub {
+  background-size: cover;
+  background-image: url(/images/zul-gurub.jpg);
+  background-position: center;
+}
+
+.onyxia {
+  background-size: cover;
+  background-image: url(/images/onyxia.jpg);
+  background-position: center;
+}
+
+.raid-header-banner {
+  background-repeat: no-repeat;
+  height: 200px;
+  position: relative;
+}
+
+.raid-header-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.5)
+}
+
+.raid-header-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.raid-header-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 7px;
+}
+
+.raid-header-item svg {
+  fill: #ffffff;
+  height: 18px;
+  width: 18px;
+  margin-right: 8px;
+}
+
+.raid-description {
+  margin-bottom: 20px;
+}
+
+.custom-card {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  margin-bottom: 20px;
+
+  .card-header {
+    border-bottom-color: rgba(0, 0, 0, 0.6);
+  }
+}

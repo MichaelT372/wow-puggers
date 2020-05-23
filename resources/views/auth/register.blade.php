@@ -1,10 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.app', ['bodyClass' => 'body-bg'])
 
 @section('content')
-<div class="container">
+<div class="container mt-4">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card text-white bg-dark">
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
@@ -16,7 +16,7 @@
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                                <small class="form-text text-muted">
+                                <small class="form-text">
                                   This name will be listed with any raids you create so use your ingame character name.
                                 </small>
                                 @error('name')

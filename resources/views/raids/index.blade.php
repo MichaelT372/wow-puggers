@@ -3,10 +3,10 @@
 @section('content')
   <div class="container">
     <div class="row justify-content-between align-items-center my-4">
-      <div class="col-10 mr-auto">
+      <div class="col-6 mr-auto">
         <h1>Your raids</h1>
       </div>
-      <div class="col-2">
+      <div class="col-6">
         <button class="btn btn-primary btn-lg float-right" @click="$store.commit('showCreateRaidModal', true)">
           Create a raid
         </button>

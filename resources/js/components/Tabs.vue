@@ -81,9 +81,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 15px;
+    padding: 12px;
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: 18px;
     cursor: pointer;
     color: rgba(255,255,255,0.3);
     transition: color .2s ease;

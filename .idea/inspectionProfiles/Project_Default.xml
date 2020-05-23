@@ -4,7 +4,7 @@
     <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="17">
+          <list size="21">
             <item index="0" class="java.lang.String" itemvalue="nobr" />
             <item index="1" class="java.lang.String" itemvalue="noembed" />
             <item index="2" class="java.lang.String" itemvalue="comment" />
@@ -22,6 +22,10 @@
             <item index="14" class="java.lang.String" itemvalue="tab" />
             <item index="15" class="java.lang.String" itemvalue="signups" />
             <item index="16" class="java.lang.String" itemvalue="soft-reserves" />
+            <item index="17" class="java.lang.String" itemvalue="delete-raider-modal" />
+            <item index="18" class="java.lang.String" itemvalue="create-signup-modal" />
+            <item index="19" class="java.lang.String" itemvalue="delete-signup-modal" />
+            <item index="20" class="java.lang.String" itemvalue="edit-signup-modal" />
           </list>
         </value>
       </option>

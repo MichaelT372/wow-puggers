@@ -1,7 +1,8 @@
 // Body
+//$body-bg: #1c1c1c;
 $body-bg: #1c1c1c;
+//$dark: #1c1c1c;
 $body-color: #ffffff;
-
 $modal-content-color: #212529;
 
 // Typography
@@ -31,6 +32,8 @@ $rogue: #FFF569;
 $warlock: #8787ED;
 $warrior: #C79C6E;
 
+$primary: #f49500;
+
 $theme-colors: (
   "druid": $druid,
   "hunter": $hunter,
@@ -40,5 +43,5 @@ $theme-colors: (
   "priest": $priest,
   "rogue": $rogue,
   "warlock": $warlock,
-  "warrior": $warrior
+  "warrior": $warrior,
 );

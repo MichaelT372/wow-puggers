@@ -71,6 +71,7 @@ class RaidController extends Controller
 
         return view('raids.show', compact('raid'));
     }
+
     /**
      * Update the specified resource in storage.
      *
