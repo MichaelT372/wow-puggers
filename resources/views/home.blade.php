@@ -26,13 +26,11 @@
         <img class="homepage-img img-fluid" src="/images/signups.jpg" alt="signups">
       </div>
       <div class="col-6">
-        <h3>Signups</h3>
+        <h3>Manage Signups</h3>
         <p>
-          This site was made as a hobby project by Mikiz who plays on Gandling-EU Alliance as an alternative to Discord
-          or spreadsheet based signup systems that many PUG groups on Gandling use.
-        </p>
-        <p>
-          I hope you find the site useful and if you have any feedback or suggestions you can contact me ingame.
+          Get a nice overview of who has signed up to your raid.
+          Confirm and edit signups easily to tailor your raid composition. For Molten Core you'll be able
+          to keep track of how many douses your raid has too.
         </p>
       </div>
     </div>
@@ -41,13 +39,10 @@
   <div class="container mt-4">
     <div class="row">
       <div class="col-6">
-        <h3>Soft reserves</h3>
+        <h3>Use Soft Reserves</h3>
         <p>
-          This site was made as a hobby project by Mikiz who plays on Gandling-EU Alliance as an alternative to Discord
-          or spreadsheet based signup systems that many PUG groups on Gandling use.
-        </p>
-        <p>
-          I hope you find the site useful and if you have any feedback or suggestions you can contact me ingame.
+          You can enable soft reserves for your raid so anyone signing up can select an item to soft reserve.
+          Everyone can see who has soft reserved what in a nice filterable table. No more spreadsheets!
         </p>
       </div>
       <div class="col-6">
