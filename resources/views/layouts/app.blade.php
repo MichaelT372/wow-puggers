@@ -12,6 +12,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>WoW Puggers</title>
+  <meta name="description" content="A site for organising World of Warcraft Classic raids"/>
+  <meta property="og:title" content="WoW Puggers">
+  <meta property="og:description" content="A site for organising World of Warcraft Classic raids">
+  <meta property="og:image" content="{{ url('/images/share.jpg') }}">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="dns-prefetch" href="//fonts.gstatic.com">
   <script>var whTooltips = {};</script>
   <script src="https://wow.zamimg.com/widgets/power.js"></script>
