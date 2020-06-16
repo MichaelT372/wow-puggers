@@ -34,7 +34,7 @@
         <tabs>
           <tab name="Info">
             <div class="card custom-card">
-              <h2 class="card-header">Description</h2>
+              <h2 class="card-header text-primary">Description</h2>
               <div class="card-body">
                 <p class="card-text">
                   {!! nl2br(e($raid->description)) !!}
@@ -42,7 +42,7 @@
               </div>
             </div>
             <div class="card custom-card">
-              <h2 class="card-header">Loot rules</h2>
+              <h2 class="card-header text-primary">Loot rules</h2>
               <div class="card-body">
                 <p class="card-text">
                   {!! nl2br(e($raid->loot_rules)) !!}

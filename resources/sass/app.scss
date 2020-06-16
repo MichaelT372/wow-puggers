@@ -10,6 +10,16 @@ body {
   padding-top: 70px;
 }
 
+#app {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+}
+
+#main {
+  flex: 1;
+}
+
 .navbar-brand img {
   height: 45px;
   width: auto;
@@ -116,5 +126,14 @@ body {
 
   .card-header {
     border-bottom-color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.footer {
+  padding: 5px 0px;
+
+  .nav-link {
+    padding-left: 0;
+    padding-right: 25px;
   }
 }

@@ -69,9 +69,28 @@
       </div>
     </div>
   </nav>
-  <main>
+
+  <main id="main">
     @yield('content')
   </main>
+
+  <footer class="footer bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('contact') }}">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('privacy') }}">Privacy &amp; Cookies</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   @yield('modal')
 </div>
 

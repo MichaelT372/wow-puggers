@@ -15,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'PageController@home')->name('home');
+Route::get('/contact', 'PageController@contact')->name('contact');
+Route::post('/contact', 'PageController@contactEmail')->name('contact.email');
+Route::get('/privacy', 'PageController@privacy')->name('privacy');
 
 Auth::routes();
 

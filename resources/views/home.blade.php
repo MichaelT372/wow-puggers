@@ -6,7 +6,7 @@
       <div class="row">
         <div class="col mt-4">
           <div class="jumbotron text-light bg-dark">
-            <h1 class="display-4">WoW Puggers</h1>
+            <h1 class="display-4 text-primary">WoW Puggers</h1>
             <p class="lead">A site for organising your World of Warcraft Classic raids.</p>
             @auth
               <a class="btn btn-primary btn-lg" href="{{ route('raids.index') }}" role="button">My Raids</a>
@@ -26,7 +26,7 @@
         <img class="homepage-img img-fluid" src="/images/signups.jpg" alt="signups">
       </div>
       <div class="col-6">
-        <h3>Manage Signups</h3>
+        <h3 class="text-primary">Manage Signups</h3>
         <p>
           Get a nice overview of who has signed up to your raid.
           Confirm and edit signups easily to tailor your raid composition. For Molten Core you'll be able
@@ -36,10 +36,10 @@
     </div>
   </div>
 
-  <div class="container mt-4">
+  <div class="container my-4">
     <div class="row">
       <div class="col-6">
-        <h3>Use Soft Reserves</h3>
+        <h3 class="text-primary">Use Soft Reserves</h3>
         <p>
           You can enable soft reserves for your raid so anyone signing up can select an item to soft reserve.
           Everyone can see who has soft reserved what in a nice filterable table. No more spreadsheets!
@@ -47,17 +47,6 @@
       </div>
       <div class="col-6">
         <img class="homepage-img img-fluid" src="/images/soft-reserves.jpg" alt="signups">
-      </div>
-    </div>
-  </div>
-
-  <div class="container mt-4">
-    <div class="row">
-      <div class="col">
-        <p class="small">
-          This site was made as a hobby project by Mikiz who plays on Gandling-EU Alliance as an alternative to Discord
-          or spreadsheet based signup systems that many PUG groups on use. I hope you find the site useful and if you have any feedback or suggestions you can contact me ingame.
-        </p>
       </div>
     </div>
   </div>
