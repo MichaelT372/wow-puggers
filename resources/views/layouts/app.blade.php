@@ -15,7 +15,7 @@
   <meta name="description" content="A site for organising World of Warcraft Classic raids"/>
   <meta property="og:title" content="WoW Puggers">
   <meta property="og:description" content="A site for organising World of Warcraft Classic raids">
-  <meta property="og:image" content="{{ url('/images/share.jpg') }}">
+  <meta property="og:image" content="{{ url('/images/signups.jpg') }}">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="dns-prefetch" href="//fonts.gstatic.com">
   <script>var whTooltips = {};</script>
